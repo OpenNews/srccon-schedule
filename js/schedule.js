@@ -4,7 +4,7 @@ function Schedule(options) {
     schedule.init = function(options) {
         schedule.sourceJSON = 'sessions.json';
         schedule.$container = $('#schedule');
-        schedule.$toggles = $('<ul>').appendTo('#schedule-controls').hide();
+        schedule.$toggles = $('<ul id="schedule-controls">').appendTo('header').hide();
         schedule.tabs = [
             { name: 'Thursday', tabDate: new Date(2014,6,24) },
             { name: 'Friday', tabDate: new Date(2014,6,25) }

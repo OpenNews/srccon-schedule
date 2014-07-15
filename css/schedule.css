@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    margin: 0 0 3em 0;
+    margin: 0 0 3em -6em;
 }
 
 header h1 {
@@ -30,20 +30,30 @@ header h1 {
     line-height: 1.2em;
     margin-bottom: .5em;
 }
-
-header h1 img {
-    height: 1.2em;
-    float: left;
-    margin-right: .5em;
+header h1 a {
+    text-decoration: none;
+    color: #111;
 }
 
-#schedule-controls ul {
+header h1 img {
+    display: inline;
+    height: 1.2em;
+    vertical-align: bottom;
+    margin-right: .25em;
+}
+
+header h1,
+header p {
+    clear: both;
+    text-align: center;
+}
+
+#schedule-controls {
     font-size: .83em;
-    float: right;
-    margin: 0 1.5em 0 0;
+    margin: 2em auto;
     padding: 0;
     list-style: none;
-    width: 18em;
+    width: 50%;
 }
 #schedule-controls li {
     display: inline-block;
@@ -68,7 +78,7 @@ header h1 img {
 #schedule-controls a {
     text-align: center;
     display: block;
-    padding: .33em 0;
+    padding: .33em 0 .5em;
     color: LightSlateGray;
     background-color: WhiteSmoke;
     text-decoration: none;
@@ -243,9 +253,39 @@ header h1 img {
         text-align: left;
     }
     .container {
-        padding-left: .75em;
+        padding: 0;
+        margin: 2em 1em;
+    }
+    .schedule-tab h3,
+    .session-list-item {
+        margin-right: 0;
     }
     header {
         margin-left: 0;
+    }
+    #schedule-controls {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    header h1 {
+        font-size: 2em;
+    }
+    header h1 img {
+        display: block;
+        height: 2.5em;
+        margin: 0 auto .5em;
+    }
+    header p {
+        font-size: .75em;
+    }
+}
+@media only screen and (max-width: 420px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    header h1 img {
+        height: 2em;
     }
 }
