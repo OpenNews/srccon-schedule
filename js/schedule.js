@@ -11,6 +11,7 @@ function Schedule(options) {
         ];
         schedule.sessionList = [];
         if (Modernizr.localstorage) {
+            localStorage['srccon_saved_sessions'] = localStorage['srccon_saved_sessions'] || '';
             schedule.savedSessionIDs = _.compact(localStorage['srccon_saved_sessions'].split(',')) || [];
         }
 
