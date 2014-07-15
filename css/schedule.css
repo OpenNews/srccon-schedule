@@ -1,0 +1,199 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    color: #111;
+    background-color: #fff;
+    font-size: 16px;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.container {
+    position: relative;
+    background: #fff;
+    max-width: 1140px;
+    margin: 2em auto;
+    padding-left: 12em;
+}
+
+header {
+    margin: 0 0 3em 0;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 3em;
+    line-height: 1.2em;
+    margin-bottom: .5em;
+}
+
+header h1 img {
+    height: 1.2em;
+    float: left;
+    margin-right: .5em;
+}
+
+#schedule-controls ul {
+    font-size: .83em;
+    float: right;
+    margin: 0 1.5em 0 0;
+    padding: 0;
+    list-style: none;
+    width: 18em;
+}
+#schedule-controls li {
+    display: inline-block;
+}
+#schedule-controls li:first-child a {
+    -webkit-border-top-left-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -moz-border-radius-topleft: 2px;
+    -moz-border-radius-bottomleft: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+#schedule-controls li:last-child a {
+    -webkit-border-top-right-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    -moz-border-radius-topright: 2px;
+    -moz-border-radius-bottomright: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-right: none;
+}
+#schedule-controls a {
+    text-align: center;
+    display: block;
+    padding: .33em 0;
+    color: LightSlateGray;
+    background-color: WhiteSmoke;
+    text-decoration: none;
+    border-right: 1px solid Gainsboro;
+}
+#schedule-controls a.active {
+    color: #000;
+    font-weight: bold;
+    background-color: Silver;
+}
+
+.schedule-tab,
+.page-block {
+    margin: 0 0 2em;
+}
+
+.schedule-tab h3 {
+    font-weight: 400;
+    text-transform: uppercase;
+    border-bottom: 1px solid Gainsboro;
+    margin: 1em 1em 1em 0;
+}
+.schedule-tab h3 span {
+    background-color: #fff;
+    font-size: .67em;
+    margin-top: -.75em;
+    padding-right: 1em;
+    float: left;
+    width: 12em;
+    margin-left: -12em;
+    text-align: right;
+}
+
+.session-list-item {
+    display: block;
+    clear: both;
+    position: relative;
+    cursor: pointer;
+    padding: 1em 1em 2.5em 1em;
+    margin: 0 2% 1em 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.session-list-item h4 {
+    margin: 0 0 .5em;
+}
+
+.session-list-item h5 {
+    font-weight: normal;
+    margin: 0;
+    position: absolute;
+    bottom: 1em;
+}
+
+.session-length-short {
+    background-color: PapayaWhip;
+}
+
+.session-length-long {
+    background-color: PowderBlue;
+}
+.session-everyone {
+    background-color: WhiteSmoke;
+}
+
+.session-time {
+    margin-right: 1em;
+}
+
+#show-full-schedule {
+    font-size: .83em;
+}
+
+.clearfix:before,
+.clearfix:after,
+.page-block:before,
+.page-block:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after,
+.page-block:after {
+    clear: both;
+}
+.clearfix,
+.page-block {
+    *zoom: 1;
+}
+
+@media only screen and (max-width: 940px) {
+    #schedule-controls ul {
+        float: none;
+        padding-right: 1.5em;
+        margin: 3em 0 0;
+        width: 100%;
+    }
+    #schedule-controls a {
+        padding: .5em 0;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .session-length-short {
+        float: left;
+        clear: none;
+        width: 48%;
+        min-height: 110px;
+    }
+    .session-length-short:nth-child(2n+1) {
+        clear: left;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .schedule-tab h3 span {
+        width: auto;
+        margin-left: 0;
+        text-align: left;
+    }
+    .container {
+        padding-left: .75em;
+    }
+    header {
+        margin-left: 0;
+    }
+}

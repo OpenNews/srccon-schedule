@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>SRCCON 2014 Schedule</title>
+        <meta name="description" content="Session schedule for SRCCON 2014, July 24 & 25 in Philadelphia.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/schedule.css">
+        <link rel="shortcut icon" href="img/favicon.ico" />
+        <link rel="apple-touch-icon-precomposed" href="img/touch-icon-144x144.png" sizes="144x144" />
+        <script src="js/modernizr.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>
+                    <a href="http://srccon.org"><img src="img/srccon_flag.png" alt="SRCCON"></a>
+                    2014 Schedule
+                </h1>
+                <div id="schedule-controls">
+                    July 24 & 25 &bull; Chemical Heritage Foundation, Philadelphia, PA
+                </div>
+            </header>
+
+            <article id="schedule">
+
+            </article>
+        </div>
+
+
+        <script type="text/template" id="session-list-template">
+        <div id="thursday" class="schedule-tab">
+            <h3><span>Thursday 9 AM</span></h3>
+            <div id="thursday-morning" class="page-block"></div>
+
+            <h3><span>Thursday 11 AM</span></h3>
+            <div id="thursday-am-1" class="page-block"></div>
+
+            <h3><span>Thursday 12:30 AM</span></h3>
+            <div id="thursday-am-2" class="page-block"></div>
+
+            <h3><span>Thursday 1:30 PM</span></h3>
+            <div id="thursday-lunch" class="page-block"></div>
+
+            <h3><span>Thursday 3 PM</span></h3>
+            <div id="thursday-pm-1" class="page-block"></div>
+
+            <h3><span>Thursday 4:30 PM</span></h3>
+            <div id="thursday-pm-2" class="page-block"></div>
+
+            <h3><span>Thursday 5:30 PM</span></h3>
+            <div id="thursday-evening" class="page-block"></div>
+        </div>
+        
+        <div id="friday" class="schedule-tab">
+            <h3><span>Friday 9:30 AM</span></h3>
+            <div id="friday-morning" class="page-block"></div>
+
+            <h3><span>Friday 11 AM</span></h3>
+            <div id="friday-am-1" class="page-block"></div>
+
+            <h3><span>Friday 12:30 PM</span></h3>
+            <div id="friday-am-2" class="page-block"></div>
+
+            <h3><span>Friday 1:30 PM</span></h3>
+            <div id="friday-lunch" class="page-block"></div>
+
+            <h3><span>Friday 3 PM</span></h3>
+            <div id="friday-pm-1" class="page-block"></div>
+
+            <h3><span>Friday 4:30 PM</span></h3>
+            <div id="friday-pm-2" class="page-block"></div>
+
+            <h3><span>Friday 5:30 PM</span></h3>
+            <div id="friday-evening" class="page-block"></div>
+        </div>
+        </script>
+
+        <script type="text/template" id="session-list-item-template">
+        <div id="session-{{ sessionID }}" class="session-list-item session-{{ sessionClass }}">
+            <h4>{{ sessionName }}</h3>
+            <h5>
+                <span class="session-time">{{ sessionTime }}</span>
+                <span class="session-room">{{ sessionRoom }}</span>
+            </h5>
+        </div>
+        </script>
+
+        <script type="text/template" id="session-detail-template">
+        <div id="session-{{ session.id }}" class="session-detail">
+            <a id="show-full-schedule" href="/">&larr; Back to full schedule</a>
+            <h2>{{ session.sessiontitle }}</h2>
+            <p>{{ session.shortdescription }}</p>
+            <p><strong>Session leader(s):</strong> {{ session.responseidentifier }}</p>
+            <p><strong>Day & Time:</strong> Time block</p>
+            <p><strong>Room:</strong> Room</p>
+        </div>
+        </script>
+        
+        <script src="js/jquery-2.1.0.min.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="js/schedule.js"></script>
+    </body>
+</html>
