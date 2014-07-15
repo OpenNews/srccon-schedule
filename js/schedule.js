@@ -10,6 +10,9 @@ function Schedule(options) {
             { name: 'Friday', tabDate: new Date(2014,6,25) }
         ];
         schedule.sessionList = [];
+        if (Modernizr.localstorage) {
+            schedule.savedSessionIDs = _.compact(localStorage['srccon_saved_sessions'].split(',')) || [];
+        }
 
         schedule.addListeners();
         schedule.addToggles();
@@ -42,8 +45,7 @@ function Schedule(options) {
 
     // Session lists
     schedule.makeSchedule = function() {
-        schedule.$container.hide().empty().append(schedule.sessionListTemplate);
-        schedule.loadSessions(schedule.addSessionsToSchedule);
+        schedule.loadChosenTab();
         schedule.$toggles.show();
     }
 
@@ -51,6 +53,7 @@ function Schedule(options) {
         $.getJSON(schedule.sourceJSON)
             .done(function(results) {
                 schedule.sortSessionGroups(results);
+                schedule.updateSavedSessionList();
                 if (callback) {
                     callback();
                 }
@@ -63,8 +66,10 @@ function Schedule(options) {
         })
     }
     
-    schedule.addSessionsToSchedule = function() {
-        _.each(schedule.sessionList, function(v, k) {
+    schedule.addSessionsToSchedule = function(sessionList) {
+        var sessionList = sessionList || schedule.sessionList;
+
+        _.each(sessionList, function(v, k) {
             var templateData = {
                 sessionID: v.id,
                 sessionName: v.sessiontitle,
@@ -73,13 +78,11 @@ function Schedule(options) {
                 sessionClass: v.everyone ? 'everyone' : v.hour_idealsessionlength == '1' ? 'length-short' : 'length-long'
             }
 
+            $('#'+v.slot).find('.open-block').remove();
             $('#'+v.slot).append(schedule.sessionListItemTemplate(templateData));
         });
-        schedule.transitionElementIn(schedule.$container);
         
-        if (schedule.chosenTab) {
-            schedule.toggleTabs();
-        }
+        schedule.addStars();
     }
     
     // Session detail
@@ -91,7 +94,6 @@ function Schedule(options) {
         if (session) {
             schedule.$toggles.hide();
             schedule.$container.hide().empty().append(schedule.sessionDetailTemplate({'session': session}));
-            $(window).scrollTop();
             schedule.transitionElementIn(schedule.$container);
         } else {
             schedule.makeSchedule();
@@ -121,9 +123,18 @@ function Schedule(options) {
         element.fadeIn(50);
     }
     
+    schedule.addStars = function() {
+        if (Modernizr.localstorage) {
+            $('.session-list-item').append('<span class="favorite">&#9733;</span>');
+            _.each(schedule.savedSessionIDs, function(i) {
+                $('#session-'+i).find('.favorite').addClass('favorite-active');
+            })
+        }
+    }
+    
     schedule.addToggles = function() {
         if (Modernizr.localstorage) {
-            //schedule.tabs.push('Favorites');
+            schedule.tabs.push({ name: 'Favorites' });
         }
         
         var toggleWidth = (1 / schedule.tabs.length) * 100;
@@ -141,7 +152,7 @@ function Schedule(options) {
         if (!schedule.chosenTab) {
             var today = new Date().toDateString();
             var favoredTab = _.find(schedule.tabs, function(i) {
-                return i.tabDate.toDateString() == today
+                return (!i.tabDate) ? false : i.tabDate.toDateString() == today
             })
         
             if (favoredTab) {
@@ -152,12 +163,36 @@ function Schedule(options) {
         }
     }
     
-    schedule.toggleTabs = function() {
+    schedule.loadChosenTab = function() {
         schedule.$toggles.find('a').removeClass('active');
         $('#show-'+schedule.chosenTab).addClass('active');
         
-        schedule.$container.find('.schedule-tab').hide();
-        schedule.transitionElementIn($('#'+schedule.chosenTab));
+        if (schedule.chosenTab == 'favorites') {
+            if (schedule.savedSessionList) {
+                schedule.showFavorites();
+            } else {
+                schedule.loadSessions(schedule.showFavorites);
+            }
+        } else {
+            schedule.$container.hide().empty().append(schedule.sessionListTemplate);
+            schedule.loadSessions(schedule.addSessionsToSchedule);
+            schedule.transitionElementIn(schedule.$container);
+
+            schedule.$container.find('.schedule-tab').hide();
+            schedule.transitionElementIn($('#'+schedule.chosenTab));
+        }
+    }
+    
+    schedule.showFavorites = function() {
+        schedule.$container.hide().empty().append('<p class="overline">Star sessions to store a list on this device.</p>').append(schedule.sessionListTemplate);
+        schedule.addSessionsToSchedule(schedule.savedSessionList);
+        schedule.transitionElementIn(schedule.$container);
+    }
+    
+    schedule.updateSavedSessionList = function() {
+        schedule.savedSessionList = _.filter(schedule.sessionList, function(v, k) {
+            return _.contains(schedule.savedSessionIDs, v.id);
+        });
     }
     
     // Listeners
@@ -178,6 +213,27 @@ function Schedule(options) {
             schedule.makeSchedule();
         });
 
+        // favoriting via localstorage
+        schedule.$container.on('click', '.favorite', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            var clicked = $(this);
+            var sessionID = clicked.parent().attr('id').replace('session-','');
+
+            clicked.toggleClass('favorite-active');
+            if (clicked.hasClass('favorite-active')) {
+                schedule.savedSessionIDs.push(sessionID);
+            } else {
+                schedule.savedSessionIDs = _.without(schedule.savedSessionIDs, sessionID);
+                if (schedule.chosenTab == 'favorites') {
+                    clicked.parent().fadeOut('fast');
+                }
+            }
+            localStorage['srccon_saved_sessions'] = schedule.savedSessionIDs.join();
+            schedule.updateSavedSessionList();
+        });
+
         // toggle schedule tabs
         schedule.$toggles.on('click', 'a', function(e) {
             e.preventDefault();
@@ -186,7 +242,7 @@ function Schedule(options) {
             schedule.updateHash(clicked);
             
             schedule.chosenTab = clicked.replace('show-','');
-            schedule.toggleTabs();
+            schedule.loadChosenTab();
         });
         
         // handle back button
