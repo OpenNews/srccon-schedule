@@ -178,6 +178,7 @@ function Schedule(options) {
             schedule.makeSchedule();
         });
 
+        // toggle schedule tabs
         schedule.$toggles.on('click', 'a', function(e) {
             e.preventDefault();
             
