@@ -102,6 +102,10 @@ header h1 img {
     text-align: right;
 }
 
+.session-detail {
+    position: relative;
+}
+
 .session-list-item,
 .open-block {
     display: block;
@@ -126,15 +130,15 @@ header h1 img {
     bottom: 1em;
 }
 
-.session-list-item .favorite {
+.favorite {
     color: #fff;
     font-size: 2em;
     position: absolute;
+    cursor: pointer;
     top: 0;
     right: 0;
     line-height: 1;
-    width: 1.5em;
-    height: 1.5em;
+    padding: 0 .3em .2em;
     text-align: center;
     text-shadow:
      -1px -1px 1px rgba(0, 0, 0, 0.1),
@@ -142,8 +146,21 @@ header h1 img {
       -1px 1px 1px rgba(0, 0, 0, 0.1),
        1px 1px 1px rgba(0, 0, 0, 0.1);
 }
-.session-list-item .favorite-active {
+
+.session-detail .favorite {
+    background-color: #ffd0b6;
+    border: 1px solid #ffd0b6;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.favorite-active {
     color: #fc6e1f;
+}
+
+.session-detail .favorite-active {
+    background-color: #fff;
 }
 
 .session-length-short {

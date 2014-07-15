@@ -51,14 +51,21 @@ function Schedule(options) {
     }
 
     schedule.loadSessions = function(callback) {
-        $.getJSON(schedule.sourceJSON)
-            .done(function(results) {
-                schedule.sortSessionGroups(results);
-                schedule.updateSavedSessionList();
-                if (callback) {
-                    callback();
-                }
-            });
+        if (schedule.sessionList.length) {
+            schedule.sortSessionGroups(schedule.sessionList);
+            if (callback) {
+                callback();
+            }
+        } else {
+            $.getJSON(schedule.sourceJSON)
+                .done(function(results) {
+                    schedule.sortSessionGroups(results);
+                    schedule.updateSavedSessionList();
+                    if (callback) {
+                        callback();
+                    }
+                });
+        }
     }
 
     schedule.sortSessionGroups = function(data) {
@@ -83,7 +90,7 @@ function Schedule(options) {
             $('#'+v.slot).append(schedule.sessionListItemTemplate(templateData));
         });
         
-        schedule.addStars();
+        schedule.addStars('.session-list-item');
     }
     
     // Session detail
@@ -95,6 +102,7 @@ function Schedule(options) {
         if (session) {
             schedule.$toggles.hide();
             schedule.$container.hide().empty().append(schedule.sessionDetailTemplate({'session': session}));
+            schedule.addStars('.session-detail');
             schedule.transitionElementIn(schedule.$container);
         } else {
             schedule.makeSchedule();
@@ -124,9 +132,9 @@ function Schedule(options) {
         element.fadeIn(50);
     }
     
-    schedule.addStars = function() {
+    schedule.addStars = function(containerClass) {
         if (Modernizr.localstorage) {
-            $('.session-list-item').append('<span class="favorite">&#9733;</span>');
+            $(containerClass).append('<span class="favorite">&#9733;</span>');
             _.each(schedule.savedSessionIDs, function(i) {
                 $('#session-'+i).find('.favorite').addClass('favorite-active');
             })
@@ -228,7 +236,7 @@ function Schedule(options) {
             } else {
                 schedule.savedSessionIDs = _.without(schedule.savedSessionIDs, sessionID);
                 if (schedule.chosenTab == 'favorites') {
-                    clicked.parent().fadeOut('fast');
+                    clicked.parent('.session-list-item').fadeOut('fast');
                 }
             }
             localStorage['srccon_saved_sessions'] = schedule.savedSessionIDs.join();
