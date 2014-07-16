@@ -135,7 +135,7 @@ function Schedule(options) {
     
     schedule.addStars = function(containerClass) {
         if (Modernizr.localstorage) {
-            $(containerClass).append('<span class="favorite"><i class="fa fa-star"></i></span>');
+            $(containerClass+':not(.session-everyone)').append('<span class="favorite"><i class="fa fa-star"></i></span>');
             _.each(schedule.savedSessionIDs, function(i) {
                 $('#session-'+i).find('.favorite').addClass('favorite-active');
             })
@@ -201,7 +201,7 @@ function Schedule(options) {
     
     schedule.updateSavedSessionList = function() {
         schedule.savedSessionList = _.filter(schedule.sessionList, function(v, k) {
-            return _.contains(schedule.savedSessionIDs, v.id);
+            return (!!v.everyone) || _.contains(schedule.savedSessionIDs, v.id);
         });
     }
     
