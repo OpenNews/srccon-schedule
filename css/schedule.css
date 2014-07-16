@@ -288,4 +288,7 @@ header p {
     header h1 img {
         height: 2em;
     }
+    .favorite {
+        font-size: 30px;
+    }
 }
