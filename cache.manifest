@@ -7,6 +7,10 @@ img/touch-icon-144x144.png
 js/jquery-2.1.0.min.js
 js/modernizr.js
 js/underscore-min.js
+fonts/fontawesome-webfont.woff
+fonts/fontawesome-webfont.eot
+fonts/fontawesome-webfont.ttf
+fonts/fontawesome-webfont.svg
 http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff
 http://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff
 http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3fY6323mHUZFJMgTvxaG2iE.eot

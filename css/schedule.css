@@ -1,5 +1,27 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.1.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-star:before {
+  content: "\f005";
+}
+
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -142,13 +164,15 @@ header p {
 
 .favorite {
     color: #fff;
-    font-size: 2em;
+    font-size: 1.2em;
     position: absolute;
     cursor: pointer;
     top: 0;
     right: 0;
     line-height: 1;
-    padding: 0 .3em .2em;
+    width: 2.5em;
+    height: 2.5em;
+    padding: 0.7em 0 0 0.2em;
     text-align: center;
     text-shadow:
      -1px -1px 1px rgba(0, 0, 0, 0.1),
@@ -160,6 +184,9 @@ header p {
 .session-detail .favorite {
     background-color: #ffd0b6;
     border: 1px solid #ffd0b6;
+    width: 1.8em;
+    height: 1.8em;
+    padding: 0.3em;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -287,8 +314,5 @@ header p {
     }
     header h1 img {
         height: 2em;
-    }
-    .favorite {
-        font-size: 30px;
     }
 }

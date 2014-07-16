@@ -134,7 +134,7 @@ function Schedule(options) {
     
     schedule.addStars = function(containerClass) {
         if (Modernizr.localstorage) {
-            $(containerClass).append('<span class="favorite">&#9733;</span>');
+            $(containerClass).append('<span class="favorite"><i class="fa fa-star"></i></span>');
             _.each(schedule.savedSessionIDs, function(i) {
                 $('#session-'+i).find('.favorite').addClass('favorite-active');
             })
