@@ -1,6 +1,5 @@
 CACHE MANIFEST
 # version 1
-CACHE
 img/favicon.ico
 img/srccon_flag.png
 img/touch-icon-144x144.png
@@ -23,4 +22,3 @@ FALLBACK
 js/schedule.js js/schedule.js
 sessions.json sessions.json
 css/schedule.css css/schedule.css
-/ index.html

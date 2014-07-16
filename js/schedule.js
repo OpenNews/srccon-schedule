@@ -125,6 +125,7 @@ function Schedule(options) {
         var newURL = (!!value) ? baseURL + "#" + value : baseURL;
         
         window.history.pushState(value, "", newURL);
+        window.history.ready = true;
     }
     
     // Display utilities
@@ -256,6 +257,7 @@ function Schedule(options) {
         
         // handle back button
         window.onpopstate = function(event) {
+            if (!window.history.ready) return;
             schedule.load();
         };
     }
