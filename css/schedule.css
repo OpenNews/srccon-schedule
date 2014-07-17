@@ -135,6 +135,7 @@ header p {
 }
 
 #session-detail-wrapper {
+    background-color: #fff;
     position: fixed;
     top: 0;
     left: 0;
@@ -142,7 +143,7 @@ header p {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    background-color: #fff;
+    -webkit-overflow-scrolling: touch;
 }
 .session-detail {
     position: relative;
