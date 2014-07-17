@@ -32,7 +32,7 @@
             <h3><span>Thursday 11 AM</span></h3>
             <div id="thursday-am-1" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 12:30 AM</span></h3>
+            <h3><span>Thursday 12:30 PM</span></h3>
             <div id="thursday-am-2" class="page-block"><div class="open-block">OPEN</div></div>
 
             <h3><span>Thursday 1:30 PM</span></h3>
@@ -73,11 +73,11 @@
         </script>
 
         <script type="text/template" id="session-list-item-template">
-        <div id="session-{{ sessionID }}" class="session-list-item session-{{ sessionClass }}" data-session="{{ sessionID }}">
-            <h4>{{ sessionName }}</h3>
+        <div id="session-<%= sessionID %>" class="session-list-item session-<%= sessionClass %>" data-session="<%= sessionID %>">
+            <h4><%= sessionName %></h3>
             <h5>
-                <span class="session-time">{{ sessionTime }}</span>
-                <span class="session-room">{{ sessionRoom }}</span>
+                <span class="session-time"><%= sessionTime %></span>
+                <span class="session-room"><%= sessionRoom %></span>
             </h5>
         </div>
         </script>
@@ -90,13 +90,13 @@
                 </header>
 
                 <article id="schedule">
-                    <div id="session-detail-{{ session.id }}" class="session-detail" data-session="{{ session.id }}">
+                    <div id="session-detail-<%= session.id %>" class="session-detail" data-session="<%= session.id %>">
                         <a id="show-full-schedule" href="/">&larr; Back to full schedule</a>
-                        <h2>{{ session.title }}</h2>
-                        <p>{{ session.description }}</p>
-                        <p><strong>Session leader(s):</strong> {{ session.leader }}</p>
-                        <p><strong>Day & Time:</strong> {{ session.day }}, {{ session.time }}</p>
-                        <p><strong>Room:</strong> {{ session.room }}</p>
+                        <h2><%= session.title %></h2>
+                        <% if (session.description) { %><p><%= session.description %></p><% } %>
+                        <% if (session.leader) { %><p><strong>Session leader(s):</strong> <%= session.leader %></p><% } %>
+                        <% if (session.day && session.time) { %><p><strong>Day & Time:</strong> <%= session.day %>, <%= session.time %></p><% } %>
+                        <% if (session.room) { %><p><strong>Room:</strong> <%= session.room %></p><% } %>
                     </div>
                 </article>
             </div>

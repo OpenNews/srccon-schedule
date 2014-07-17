@@ -282,11 +282,6 @@ function Schedule(options) {
         }, false);
     }
 
-    // Underscore templates
-    _.templateSettings = {
-        interpolate: /\{\{(.+?)\}\}/g
-    };
-
     schedule.sessionListTemplate = _.template(
         $("script#session-list-template").html()
     );
