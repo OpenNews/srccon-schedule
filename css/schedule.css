@@ -162,6 +162,11 @@ header p {
     border-radius: 2px;
 }
 
+.session-list-item {
+    color: #111;
+    text-decoration: none;
+}
+
 .session-list-item h4 {
     margin: 0 0 .5em;
 }
