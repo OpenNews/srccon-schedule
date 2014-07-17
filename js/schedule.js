@@ -223,10 +223,11 @@ function Schedule(options) {
             
             if (window.history.ready) {
                 window.history.back();
+            } else {
+                schedule.updateHash('');
+                schedule.clearSessionDetail();
+                schedule.makeSchedule();
             }
-            schedule.updateHash('');
-            schedule.clearSessionDetail();
-            schedule.makeSchedule();
         });
 
         // favoriting via localstorage
