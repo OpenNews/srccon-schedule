@@ -421,7 +421,7 @@
     }, 
     {
         "everyone": "1", 
-        "room": "Ulliot", 
+        "room": "Ullyot", 
         "title": "Registration & Breakfast", 
         "id": "36", 
         "length": "", 
@@ -433,7 +433,7 @@
     }, 
     {
         "everyone": "1", 
-        "room": "Ulliot", 
+        "room": "Ullyot", 
         "title": "Welcome to SRCCON", 
         "id": "37", 
         "length": "", 
@@ -457,7 +457,7 @@
     }, 
     {
         "everyone": "1", 
-        "room": "Ulliot", 
+        "room": "Ullyot", 
         "title": "Dinner at SRCCON", 
         "id": "39", 
         "length": "", 
@@ -481,19 +481,19 @@
     }, 
     {
         "everyone": "1", 
-        "room": "Ulliot", 
+        "room": "Ullyot", 
         "title": "Breakfast", 
         "id": "41", 
         "length": "", 
         "scheduleblock": "friday-morning", 
-        "time": "9:30-11am", 
+        "time": "9:30-10:45am", 
         "leader": "", 
         "day": "Friday", 
         "description": "The most important meal of the day (or, at least, the first!), share it with us. Coffee hacking stations will be in full effect today as well, if you're nursing a little too much late-night cheesesteak."
     }, 
     {
         "everyone": "1", 
-        "room": "Ulliot", 
+        "room": "Ullyot", 
         "title": "Lunch at SRCCON", 
         "id": "42", 
         "length": "", 
@@ -505,7 +505,7 @@
     }, 
     {
         "everyone": "1", 
-        "room": "Ulliot", 
+        "room": "Ullyot", 
         "title": "Closing", 
         "id": "43", 
         "length": "", 
