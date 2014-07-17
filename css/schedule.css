@@ -70,6 +70,10 @@ header p {
     text-align: center;
 }
 
+header p a {
+    white-space: nowrap;
+}
+
 #schedule-controls {
     font-size: .83em;
     margin: 2em auto;

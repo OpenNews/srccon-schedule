@@ -229,6 +229,7 @@ function Schedule(options) {
     schedule.addListeners = function() {
         // open session detail view
         schedule.$container.on('click', '.session-list-item', function(e) {
+            e.preventDefault();
             var clicked = $(this).data('session');
 
             schedule.trackEvent('Session Detail Opened', clicked);
