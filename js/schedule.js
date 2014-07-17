@@ -34,10 +34,10 @@ function Schedule(options) {
     
     schedule.route = function(pageType, pageID) {
         switch(pageType) {
-            case "session":
+            case "_session":
                 schedule.getSessionDetail(pageID);
                 break;
-            case "show":
+            case "_show":
                 schedule.chosenTab = pageID;
                 schedule.makeSchedule();
                 break;
@@ -70,7 +70,7 @@ function Schedule(options) {
 
     schedule.sortSessionGroups = function(data) {
         schedule.sessionList = _.sortBy(data, function(i) {
-            return i.hour_idealsessionlength != '1';
+            return i.length != '1 hour';
         })
     }
     
@@ -80,14 +80,14 @@ function Schedule(options) {
         _.each(sessionList, function(v, k) {
             var templateData = {
                 sessionID: v.id,
-                sessionName: v.sessiontitle,
-                sessionTime: 'Time block',
-                sessionRoom: 'Room name',
-                sessionClass: v.everyone ? 'everyone' : v.hour_idealsessionlength == '1' ? 'length-short' : 'length-long'
+                sessionName: v.title,
+                sessionTime: v.time,
+                sessionRoom: v.room,
+                sessionClass: v.everyone ? 'everyone' : v.length == '1 hour' ? 'length-short' : 'length-long'
             }
 
-            $('#'+v.slot).find('.open-block').remove();
-            $('#'+v.slot).append(schedule.sessionListItemTemplate(templateData));
+            $('#'+v.scheduleblock).find('.open-block').remove();
+            $('#'+v.scheduleblock).append(schedule.sessionListItemTemplate(templateData));
         });
         
         schedule.addStars('.session-list-item');
@@ -100,13 +100,15 @@ function Schedule(options) {
         })
 
         if (session) {
-            schedule.$toggles.hide();
-            schedule.$container.hide().empty().append(schedule.sessionDetailTemplate({'session': session}));
+            schedule.$container.append(schedule.sessionDetailTemplate({'session': session}));
             schedule.addStars('.session-detail');
-            schedule.transitionElementIn(schedule.$container);
         } else {
             schedule.makeSchedule();
         }
+    }
+
+    schedule.clearSessionDetail = function() {
+        $('#session-detail-wrapper').remove();
     }
     
     schedule.getSessionDetail = function(sessionID) {
@@ -122,7 +124,7 @@ function Schedule(options) {
     // Hash utilities
     schedule.updateHash = function(value) {
         var baseURL = window.location.href.replace(window.location.hash, '');
-        var newURL = (!!value) ? baseURL + "#" + value : baseURL;
+        var newURL = (!!value) ? baseURL + "#_" + value : baseURL;
         
         window.history.pushState(value, "", newURL);
         window.history.ready = true;
@@ -137,7 +139,7 @@ function Schedule(options) {
         if (Modernizr.localstorage) {
             $(containerClass+':not(.session-everyone)').append('<span class="favorite"><i class="fa fa-star"></i></span>');
             _.each(schedule.savedSessionIDs, function(i) {
-                $('#session-'+i).find('.favorite').addClass('favorite-active');
+                $('[data-session="' + i + '"]').find('.favorite').addClass('favorite-active');
             })
         }
     }
@@ -219,7 +221,11 @@ function Schedule(options) {
         schedule.$container.on('click', '#show-full-schedule', function(e) {
             e.preventDefault();
             
+            if (window.history.ready) {
+                window.history.back();
+            }
             schedule.updateHash('');
+            schedule.clearSessionDetail();
             schedule.makeSchedule();
         });
 
@@ -229,7 +235,7 @@ function Schedule(options) {
             e.stopPropagation();
             
             var clicked = $(this);
-            var sessionID = clicked.parent().attr('id').replace('session-','');
+            var sessionID = clicked.parent().data('session').toString();
 
             clicked.toggleClass('favorite-active');
             if (clicked.hasClass('favorite-active')) {
@@ -258,8 +264,21 @@ function Schedule(options) {
         // handle back button
         window.onpopstate = function(event) {
             if (!window.history.ready) return;
+            schedule.clearSessionDetail();
             schedule.load();
         };
+
+        // check for new appcache on page load
+        window.addEventListener('load', function(e) {
+            window.applicationCache.addEventListener('updateready', function(e) {
+                if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+                    // new appcache downloaded
+                    if (confirm('A new version of the schedule is available. Load it?')) {
+                        window.location.reload();
+                    }
+                }
+            }, false);
+        }, false);
     }
 
     // Underscore templates
