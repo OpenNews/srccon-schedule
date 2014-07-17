@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" manifest="cache.manifest">
+<html class="no-js">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,17 +14,13 @@
     <body>
         <div class="container">
             <header>
-                <h1>
-                    <a href="/"><img src="img/srccon_flag.png" alt="SRCCON"> 2014 Schedule</a>
-                </h1>
+                <h1><a href="/"><img src="img/srccon_flag.png" alt="SRCCON"> 2014 Schedule</a></h1>
                 <p>
                     July 24 & 25 &bull; Chemical Heritage Foundation, Philadelphia, PA &bull; <a href="http://srccon.org">Conference site</a>
                 </p>
             </header>
 
-            <article id="schedule">
-
-            </article>
+            <article id="schedule"></article>
         </div>
 
 
@@ -77,7 +73,7 @@
         </script>
 
         <script type="text/template" id="session-list-item-template">
-        <div id="session-{{ sessionID }}" class="session-list-item session-{{ sessionClass }}">
+        <div id="session-{{ sessionID }}" class="session-list-item session-{{ sessionClass }}" data-session="{{ sessionID }}">
             <h4>{{ sessionName }}</h3>
             <h5>
                 <span class="session-time">{{ sessionTime }}</span>
@@ -87,13 +83,23 @@
         </script>
 
         <script type="text/template" id="session-detail-template">
-        <div id="session-{{ session.id }}" class="session-detail">
-            <a id="show-full-schedule" href="/">&larr; Back to full schedule</a>
-            <h2>{{ session.sessiontitle }}</h2>
-            <p>{{ session.shortdescription }}</p>
-            <p><strong>Session leader(s):</strong> {{ session.responseidentifier }}</p>
-            <p><strong>Day & Time:</strong> Time block</p>
-            <p><strong>Room:</strong> Room</p>
+        <div id="session-detail-wrapper">
+            <div class="container">
+                <header>
+                    <h1><a href="/"><img src="img/srccon_flag.png" alt="SRCCON"> 2014 Schedule</a></h1>
+                </header>
+
+                <article id="schedule">
+                    <div id="session-detail-{{ session.id }}" class="session-detail" data-session="{{ session.id }}">
+                        <a id="show-full-schedule" href="/">&larr; Back to full schedule</a>
+                        <h2>{{ session.title }}</h2>
+                        <p>{{ session.description }}</p>
+                        <p><strong>Session leader(s):</strong> {{ session.leader }}</p>
+                        <p><strong>Day & Time:</strong> {{ session.day }}, {{ session.time }}</p>
+                        <p><strong>Room:</strong> {{ session.room }}</p>
+                    </div>
+                </article>
+            </div>
         </div>
         </script>
         

@@ -6,10 +6,12 @@ img/touch-icon-144x144.png
 js/jquery-2.1.0.min.js
 js/modernizr.js
 js/underscore-min.js
-fonts/fontawesome-webfont.woff
-fonts/fontawesome-webfont.eot
-fonts/fontawesome-webfont.ttf
-fonts/fontawesome-webfont.svg
+fonts/fontawesome-webfont.eot?v=4.1.0
+fonts/fontawesome-webfont.eot?#iefix&v=4.1.0
+fonts/fontawesome-webfont.woff?v=4.1.0
+fonts/fontawesome-webfont.ttf?v=4.1.0
+fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular
+http://fonts.googleapis.com/css?family=Open+Sans:400,700
 http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff
 http://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff
 http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3fY6323mHUZFJMgTvxaG2iE.eot
@@ -17,8 +19,6 @@ http://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjup
 http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3SZ2oysoEQEeKwjgmXLRnTc.ttf
 http://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzJS3E-kSBmtLoNJPDtbj2Pk.ttf
 http://themes.googleusercontent.com/licensed/font?kit=cJZKeOuBrn4kERxqtaUH3Zbd9NUM7myrQQz30yPaGQ4#OpenSans
-
-FALLBACK
-js/schedule.js js/schedule.js
-sessions.json sessions.json
-css/schedule.css css/schedule.css
+js/schedule.js
+sessions.json
+css/schedule.css
