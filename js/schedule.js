@@ -231,6 +231,7 @@ function Schedule(options) {
         schedule.$container.on('click', '.session-list-item', function(e) {
             var clicked = $(this).data('session');
 
+            schedule.trackEvent('Session Detail Opened', clicked);
             schedule.updateHash('session-'+clicked);
             schedule.getSessionDetail(clicked);
         });
@@ -260,8 +261,10 @@ function Schedule(options) {
             targets.toggleClass('favorite-active');
             if (clicked.hasClass('favorite-active')) {
                 schedule.savedSessionIDs.push(sessionID);
+                schedule.trackEvent('Session Faved', sessionID);
             } else {
                 schedule.savedSessionIDs = _.without(schedule.savedSessionIDs, sessionID);
+                schedule.trackEvent('Session Unfaved', sessionID);
                 if (schedule.chosenTab == 'favorites') {
                     targets.parent('.session-list-item').fadeOut('fast', function() {
                         var target = $(this);
@@ -285,6 +288,7 @@ function Schedule(options) {
             schedule.updateHash(clicked);
             
             schedule.chosenTab = clicked.replace('show-','');
+            schedule.trackEvent('Tab change', schedule.chosenTab);
             schedule.loadChosenTab();
         });
         
@@ -306,6 +310,10 @@ function Schedule(options) {
                 }
             }, false);
         }, false);
+    }
+    
+    schedule.trackEvent = function(action, label) {
+        ga('send', 'event', 'Schedule App', action, label);
     }
 
     // Text formatting
@@ -341,5 +349,10 @@ function Schedule(options) {
     // fight me
     schedule.init();
 }
+
+marked.setOptions({
+    tables: false,
+    smartypants: true
+});
 
 new Schedule();

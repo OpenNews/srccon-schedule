@@ -2,7 +2,7 @@
     {
         "everyone": "", 
         "room": "Franklin 2", 
-        "title": "There Is No CMS", 
+        "title": "There is no CMS", 
         "id": "1", 
         "length": "1 hour", 
         "scheduleblock": "thursday-am-1", 
@@ -38,7 +38,7 @@
     {
         "everyone": "", 
         "room": "Garden 1", 
-        "title": "How NOT to Skew with Statistics: Drafting, Data Bulletproofing, and Tools for Well-*Developed* Stories", 
+        "title": "How NOT to skew with statistics: drafting, data bulletproofing, and tools for well-*developed* stories", 
         "id": "4", 
         "length": "1 hour", 
         "scheduleblock": "thursday-am-1", 
@@ -50,7 +50,7 @@
     {
         "everyone": "", 
         "room": "Garden 2", 
-        "title": "Closing the Gaps: Let's Identify the Holes in Open Data, Then Fix Them", 
+        "title": "Closing the gaps: Let's identify the holes in open data, then fix them", 
         "id": "5", 
         "length": "1 hour", 
         "scheduleblock": "thursday-am-1", 
@@ -74,7 +74,7 @@
     {
         "everyone": "", 
         "room": "Franklin 2", 
-        "title": "Two Million Dollars and One Hour: Can You Design a New News Org that Doesn’t Shit the Bed?", 
+        "title": "Two million dollars and one hour: Can you design a new news org that doesn’t shit the bed?", 
         "id": "7", 
         "length": "1 hour", 
         "scheduleblock": "thursday-am-2", 
@@ -86,7 +86,7 @@
     {
         "everyone": "", 
         "room": "Haas", 
-        "title": "The Hitchhiker's Guide to Datasets", 
+        "title": "The Hitchhiker's Guide to datasets", 
         "id": "8", 
         "length": "1 hour", 
         "scheduleblock": "thursday-am-2", 
@@ -98,7 +98,7 @@
     {
         "everyone": "", 
         "room": "Garden 1", 
-        "title": "Using Web Type: Pitfalls and Workarounds", 
+        "title": "Using web type: pitfalls and workarounds", 
         "id": "9", 
         "length": "1 hour", 
         "scheduleblock": "thursday-am-2", 
@@ -134,7 +134,7 @@
     {
         "everyone": "", 
         "room": "Franklin 1", 
-        "title": "Human-driven design: How to know your users and build just what they need", 
+        "title": "Human-driven design: how to know your users and build just what they need", 
         "id": "12", 
         "length": "1 hour", 
         "scheduleblock": "thursday-pm-1", 
@@ -146,7 +146,7 @@
     {
         "everyone": "", 
         "room": "Haas", 
-        "title": "Sartre Was Wrong: Hell is Data About Other People", 
+        "title": "Sartre was wrong: Hell is data about other people", 
         "id": "13", 
         "length": "2.5 hours", 
         "scheduleblock": "thursday-pm-1", 
@@ -170,7 +170,7 @@
     {
         "everyone": "", 
         "room": "Garden 2", 
-        "title": "Data Processing Pipeline Show & Tell", 
+        "title": "Data processing pipeline show & tell", 
         "id": "15", 
         "length": "1 hour", 
         "scheduleblock": "thursday-pm-1", 
@@ -218,7 +218,7 @@
     {
         "everyone": "", 
         "room": "Garden 2", 
-        "title": "Make your devs & teams braver through DevOps (God help us all)\n", 
+        "title": "Make your devs & teams braver through devops (God help us all)\n", 
         "id": "19", 
         "length": "1 hour", 
         "scheduleblock": "thursday-pm-2", 
@@ -242,7 +242,7 @@
     {
         "everyone": "", 
         "room": "Franklin 1", 
-        "title": "Toward Web-Native Storytelling!", 
+        "title": "Toward web-native storytelling!", 
         "id": "21", 
         "length": "1 hour", 
         "scheduleblock": "friday-am-1", 
@@ -254,7 +254,7 @@
     {
         "everyone": "", 
         "room": "Haas", 
-        "title": "Building Exoskeletons for Reporters", 
+        "title": "Building exoskeletons for reporters", 
         "id": "22", 
         "length": "2.5 hours", 
         "scheduleblock": "friday-am-1", 
@@ -278,7 +278,7 @@
     {
         "everyone": "", 
         "room": "Garden 2", 
-        "title": "Building Smart Newsroom Tools: How A Culture Can Make or Break Your Internal Tools", 
+        "title": "Building smart newsroom tools: how a culture can make or break your internal tools", 
         "id": "24", 
         "length": "1 hour", 
         "scheduleblock": "friday-am-1", 
@@ -290,7 +290,7 @@
     {
         "everyone": "", 
         "room": "Garden 3", 
-        "title": "Hands-on: Wrangling live data the easy way with Streamtools", 
+        "title": "Hands-on: wrangling live data the easy way with Streamtools", 
         "id": "25", 
         "length": "2.5 hours", 
         "scheduleblock": "friday-am-1", 
@@ -326,7 +326,7 @@
     {
         "everyone": "", 
         "room": "Garden 2", 
-        "title": "Style Guides: codifying your common interface decisions", 
+        "title": "Style guides: codifying your common interface decisions", 
         "id": "28", 
         "length": "1 hour", 
         "scheduleblock": "friday-am-2", 
@@ -362,7 +362,7 @@
     {
         "everyone": "", 
         "room": "Haas", 
-        "title": "Handguns and Tequila: Avoiding Data Disasters", 
+        "title": "Handguns and tequila: avoiding data disasters", 
         "id": "31", 
         "length": "1 hour", 
         "scheduleblock": "friday-pm-1", 
@@ -374,7 +374,7 @@
     {
         "everyone": "", 
         "room": "Garden 1", 
-        "title": "Own Your Analytics.", 
+        "title": "Own your analytics", 
         "id": "32", 
         "length": "2.5 hours", 
         "scheduleblock": "friday-pm-1", 
@@ -386,7 +386,7 @@
     {
         "everyone": "", 
         "room": "Garden 2", 
-        "title": "New Frontiers in Javascript: The Browser at the Bleeding Edge", 
+        "title": "New frontiers in javascript: the browser at the bleeding edge", 
         "id": "33", 
         "length": "2.5 hours", 
         "scheduleblock": "friday-pm-1", 
@@ -398,7 +398,7 @@
     {
         "everyone": "", 
         "room": "Franklin 1", 
-        "title": "How to Train Your Newsroom", 
+        "title": "How to train your newsroom", 
         "id": "34", 
         "length": "1 hour", 
         "scheduleblock": "friday-pm-2", 
@@ -421,86 +421,98 @@
     }, 
     {
         "everyone": "1", 
-        "room": "", 
-        "title": "Registration", 
+        "room": "Ulliot", 
+        "title": "Registration & Breakfast", 
         "id": "36", 
         "length": "", 
         "scheduleblock": "thursday-morning", 
         "time": "9-10am", 
         "leader": "", 
         "day": "Thursday", 
-        "description": ""
+        "description": "Get your badges and get some food (plus plenty of coffee), as you gear up for the first day of SRCCON! Also, this is Philly, so indulge in the mountain of soft pretzels."
+    }, 
+    {
+        "everyone": "1", 
+        "room": "Ulliot", 
+        "title": "Welcome to SRCCON", 
+        "id": "37", 
+        "length": "", 
+        "scheduleblock": "thursday-morning", 
+        "time": "10-10:30am", 
+        "leader": "", 
+        "day": "Thursday", 
+        "description": "Let's kick SRCCON off right, with a welcome, some scene-setting, and a little getting-to-know-you. No songs or trust falls, we promise."
     }, 
     {
         "everyone": "1", 
         "room": "", 
         "title": "Lunch on your own", 
-        "id": "37", 
+        "id": "38", 
         "length": "", 
         "scheduleblock": "thursday-lunch", 
         "time": "1:30-3pm", 
         "leader": "", 
         "day": "Thursday", 
-        "description": ""
+        "description": "Did you know that Philadelphia is the birthplace of America? Go find out why! There's tons of great food options and more history in a five-square-block radius than you can even believe. Get out and enjoy the heat!"
     }, 
     {
         "everyone": "1", 
-        "room": "", 
+        "room": "Ulliot", 
         "title": "Dinner at SRCCON", 
-        "id": "38", 
+        "id": "39", 
         "length": "", 
         "scheduleblock": "thursday-evening", 
         "time": "5:30-7pm", 
         "leader": "", 
         "day": "Thursday", 
-        "description": ""
+        "description": "It's taco time at SRCCON! Iron Chef Jose Garces (really) will be setting up a taco bar, with all the best fixin's, mix-ins, and more. Plus, a ton of Pennsylvania beer and ice cream from Little Baby's."
     }, 
     {
         "everyone": "1", 
         "room": "", 
         "title": "Evening sessions", 
-        "id": "39", 
+        "id": "40", 
         "length": "", 
         "scheduleblock": "thursday-evening", 
-        "time": "7-10pm", 
+        "time": "7-9pm", 
         "leader": "", 
         "day": "Thursday", 
-        "description": ""
+        "description": "It's the SRCCON House Party! We'll have four rooms going with different themes and activities:\n\n* Play games in the Game Room! We'll be running a Magic: The Gathering draft, plus lots of other games to choose from--and bring your own to share and play.\n* Have a topic you're passionate about? Go to the Lightning Talk Room and share your passions in five-minute *slide free* talks!\n* Are you a foodie? Join the legion in the Food Room discussing their favorite recipes, techniques and more.\n* Just want to hack on some stuff? We'll be running a Hack Space for you to share your projects and hack on others."
     }, 
     {
         "everyone": "1", 
-        "room": "", 
+        "room": "Ulliot", 
         "title": "Breakfast", 
-        "id": "40", 
+        "id": "41", 
         "length": "", 
         "scheduleblock": "friday-morning", 
         "time": "9:30-11am", 
         "leader": "", 
         "day": "Friday", 
-        "description": ""
+        "description": "The most important meal of the day (or, at least, the first!), share it with us. Coffee hacking stations will be in full effect today as well, if you're nursing a little too much late-night cheesesteak."
     }, 
     {
         "everyone": "1", 
-        "room": "", 
+        "room": "Ulliot", 
         "title": "Lunch at SRCCON", 
-        "id": "41", 
+        "id": "42", 
         "length": "", 
         "scheduleblock": "friday-lunch", 
         "time": "1:30-3pm", 
         "leader": "", 
         "day": "Friday", 
-        "description": ""
+        "description": "Keep the conversations from this morning going (or chat about something else) while enjoying sandwiches, drinks, and even more soft pretzels on us!"
     }, 
     {
         "everyone": "1", 
-        "room": "", 
+        "room": "Ulliot", 
         "title": "Closing", 
-        "id": "42", 
+        "id": "43", 
         "length": "", 
         "scheduleblock": "friday-evening", 
         "time": "5:30-6pm", 
         "leader": "", 
         "day": "Friday", 
-        "description": ""
+        "description": "This is it. We promise no group sing-along, but we don't promise not to shed a tear or two (probably because we'll be really tired). Help us close out SRCCON and set the stage for what happens next."
     }
 ]
