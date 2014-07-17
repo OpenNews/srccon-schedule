@@ -92,11 +92,11 @@
                 <article id="schedule">
                     <div id="session-detail-<%= session.id %>" class="session-detail" data-session="<%= session.id %>">
                         <a id="show-full-schedule" href="/">&larr; Back to full schedule</a>
-                        <h2><%= session.title %></h2>
-                        <% if (session.description) { %><p><%= session.description %></p><% } %>
-                        <% if (session.leader) { %><p><strong>Session leader(s):</strong> <%= session.leader %></p><% } %>
+                        <h2><%= formatPrettyText(session.title) %></h2>
+                        <% if (session.description) { %><p><%= formatMultiline(formatPrettyText(session.description)) %></p><% } %>
+                        <% if (session.leader) { %><p><strong>Session leader(s):</strong> <%= formatPrettyText(session.leader) %></p><% } %>
                         <% if (session.day && session.time) { %><p><strong>Day & Time:</strong> <%= session.day %>, <%= session.time %></p><% } %>
-                        <% if (session.room) { %><p><strong>Room:</strong> <%= session.room %></p><% } %>
+                        <% if (session.room) { %><p><strong>Room:</strong> <%= formatPrettyText(session.room) %></p><% } %>
                     </div>
                 </article>
             </div>

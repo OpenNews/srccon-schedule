@@ -80,9 +80,9 @@ function Schedule(options) {
         _.each(sessionList, function(v, k) {
             var templateData = {
                 sessionID: v.id,
-                sessionName: v.title,
+                sessionName: schedule.formatPrettyText(v.title),
                 sessionTime: v.time,
-                sessionRoom: v.room,
+                sessionRoom: schedule.formatPrettyText(v.room),
                 sessionClass: v.everyone ? 'everyone' : v.length == '1 hour' ? 'length-short' : 'length-long'
             }
 
@@ -100,7 +100,13 @@ function Schedule(options) {
         })
 
         if (session) {
-            schedule.$container.append(schedule.sessionDetailTemplate({'session': session}));
+            var templateData = {
+                'session': session,
+                'formatMultiline': schedule.formatMultiline,
+                'formatPrettyText': schedule.formatPrettyText
+            }
+            
+            schedule.$container.append(schedule.sessionDetailTemplate(templateData));
             schedule.addStars('.session-detail');
         } else {
             schedule.makeSchedule();
@@ -282,6 +288,26 @@ function Schedule(options) {
         }, false);
     }
 
+    // Text formatting
+    schedule.formatMultiline = function(str) {
+        return str.replace(RegExp('\\n', 'g'),'<br>');
+    }
+    
+    schedule.formatPrettyText = function(str) {
+        return str
+            // opening single quotes
+            .replace(/(^|[-\u2014\s(\["])'/g, "$1\u2018")
+            // closing single quotes & apostrophes
+            .replace(/'/g, "\u2019")
+            // opening double quotes
+            .replace(/(^|[-\u2014/\[(\u2018\s])"/g, "$1\u201c")
+            // closing double quotes
+            .replace(/"/g, "\u201d")
+            // em dashes
+            .replace(/--/g, "\u2014");
+    }
+
+    // Underscore templates
     schedule.sessionListTemplate = _.template(
         $("script#session-list-template").html()
     );
