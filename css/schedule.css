@@ -223,6 +223,13 @@ header p a {
     background-color: PapayaWhip;
 }
 
+.favorites .session-length-short {
+    float: none;
+    clear: both;
+    width: auto;
+    min-height: 0;
+}
+
 .session-length-long {
     background-color: PowderBlue;
 }

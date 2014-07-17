@@ -198,12 +198,14 @@ function Schedule(options) {
         $('#show-'+schedule.chosenTab).addClass('active');
         
         if (schedule.chosenTab == 'favorites') {
+            schedule.$container.addClass('favorites');
             if (schedule.savedSessionList) {
                 schedule.showFavorites();
             } else {
                 schedule.loadSessions(schedule.showFavorites);
             }
         } else {
+            schedule.$container.removeClass('favorites');
             schedule.$container.hide().empty().append(schedule.sessionListTemplate);
             schedule.loadSessions(schedule.addSessionsToSchedule);
             schedule.transitionElementIn(schedule.$container);
