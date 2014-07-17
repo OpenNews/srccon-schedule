@@ -218,9 +218,14 @@ header p {
 .session-length-long {
     background-color: PowderBlue;
 }
+
 .session-everyone,
 .open-block {
     background-color: WhiteSmoke;
+}
+
+.session-ghost {
+    opacity: .4;
 }
 
 .open-block {

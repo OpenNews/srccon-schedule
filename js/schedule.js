@@ -76,6 +76,10 @@ function Schedule(options) {
     
     schedule.addSessionsToSchedule = function(sessionList) {
         var sessionList = sessionList || schedule.sessionList;
+        var addSession = function (targetBlock, templateData) {
+            targetBlock.find('.open-block').remove();
+            targetBlock.append(schedule.sessionListItemTemplate(templateData));
+        }
 
         _.each(sessionList, function(v, k) {
             var templateData = {
@@ -85,9 +89,19 @@ function Schedule(options) {
                 sessionRoom: schedule.formatPrettyText(v.room),
                 sessionClass: v.everyone ? 'everyone' : v.length == '1 hour' ? 'length-short' : 'length-long'
             }
+            
+            // write session into proper schedule block
+            var targetBlock = $('#'+v.scheduleblock);
+            addSession(targetBlock, templateData);
 
-            $('#'+v.scheduleblock).find('.open-block').remove();
-            $('#'+v.scheduleblock).append(schedule.sessionListItemTemplate(templateData));
+            // for long sessions, add ghost to next block as well
+            if (v.length == '2.5 hours') {
+                templateData.sessionID += '-ghost';
+                templateData.sessionClass += ' session-ghost';
+
+                var targetBlock = $('#'+v.scheduleblock.replace('-1','-2'));
+                addSession(targetBlock, templateData);
+            }
         });
         
         schedule.addStars('.session-list-item');
@@ -217,10 +231,10 @@ function Schedule(options) {
     schedule.addListeners = function() {
         // open session detail view
         schedule.$container.on('click', '.session-list-item', function(e) {
-            var clicked = $(this).attr('id');
+            var clicked = $(this).data('session');
 
-            schedule.updateHash(clicked);
-            schedule.getSessionDetail(clicked.replace('session-',''));
+            schedule.updateHash('session-'+clicked);
+            schedule.getSessionDetail(clicked);
         });
 
         // return to full schedule from session detail view
@@ -243,14 +257,22 @@ function Schedule(options) {
             
             var clicked = $(this);
             var sessionID = clicked.parent().data('session').toString();
+            var targets = $('[data-session="' + sessionID + '"]').find('.favorite');
 
-            clicked.toggleClass('favorite-active');
+            targets.toggleClass('favorite-active');
             if (clicked.hasClass('favorite-active')) {
                 schedule.savedSessionIDs.push(sessionID);
             } else {
                 schedule.savedSessionIDs = _.without(schedule.savedSessionIDs, sessionID);
                 if (schedule.chosenTab == 'favorites') {
-                    clicked.parent('.session-list-item').fadeOut('fast');
+                    targets.parent('.session-list-item').fadeOut('fast', function() {
+                        var target = $(this);
+                        var targetBlock = target.parents('.page-block');
+                        target.remove();
+                        if (!targetBlock.find('.session-list-item').length) {
+                            targetBlock.append('<div class="open-block">OPEN</div>');
+                        }
+                    });
                 }
             }
             localStorage['srccon_saved_sessions'] = schedule.savedSessionIDs.join();

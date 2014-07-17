@@ -73,7 +73,7 @@
         </script>
 
         <script type="text/template" id="session-list-item-template">
-        <div id="session-<%= sessionID %>" class="session-list-item session-<%= sessionClass %>" data-session="<%= sessionID %>">
+        <div id="session-<%= sessionID %>" class="session-list-item session-<%= sessionClass %>" data-session="<%= sessionID.replace('-ghost','') %>">
             <h4><%= sessionName %></h3>
             <h5>
                 <span class="session-time"><%= sessionTime %></span>
