@@ -83,11 +83,10 @@ function Schedule(options) {
 
         _.each(sessionList, function(v, k) {
             var templateData = {
+                session: v,
                 sessionID: v.id,
-                sessionName: schedule.formatPrettyText(v.title),
-                sessionTime: v.time,
-                sessionRoom: schedule.formatPrettyText(v.room),
-                sessionClass: v.everyone ? 'everyone' : v.length == '1 hour' ? 'length-short' : 'length-long'
+                sessionClass: v.everyone ? 'everyone' : v.length == '1 hour' ? 'length-short' : 'length-long',
+                smartypants: schedule.smartypants
             }
             
             // write session into proper schedule block
@@ -115,11 +114,10 @@ function Schedule(options) {
 
         if (session) {
             var templateData = {
-                'session': session,
-                'formatMultiline': schedule.formatMultiline,
-                'formatPrettyText': schedule.formatPrettyText
+                session: session,
+                smartypants: schedule.smartypants
             }
-            
+
             schedule.$container.append(schedule.sessionDetailTemplate(templateData));
             schedule.addStars('.session-detail');
         } else {
@@ -311,22 +309,20 @@ function Schedule(options) {
     }
 
     // Text formatting
-    schedule.formatMultiline = function(str) {
-        return str.replace(RegExp('\\n', 'g'),'<br>');
-    }
-    
-    schedule.formatPrettyText = function(str) {
+    schedule.smartypants = function(str) {
         return str
-            // opening single quotes
-            .replace(/(^|[-\u2014\s(\["])'/g, "$1\u2018")
-            // closing single quotes & apostrophes
-            .replace(/'/g, "\u2019")
-            // opening double quotes
-            .replace(/(^|[-\u2014/\[(\u2018\s])"/g, "$1\u201c")
-            // closing double quotes
-            .replace(/"/g, "\u201d")
             // em dashes
-            .replace(/--/g, "\u2014");
+            .replace(/--/g, '\u2014')
+            // opening single quotes
+            .replace(/(^|[-\u2014/(\[{"\s])'/g, '$1\u2018')
+            // closing single quotes & apostrophes
+            .replace(/'/g, '\u2019')
+            // opening double quotes
+            .replace(/(^|[-\u2014/(\[{\u2018\s])"/g, '$1\u201c')
+            // closing double quotes
+            .replace(/"/g, '\u201d')
+            // ellipses
+            .replace(/\.{3}/g, '\u2026');
     }
 
     // Underscore templates

@@ -6,6 +6,7 @@ img/touch-icon-144x144.png
 js/jquery-2.1.0.min.js
 js/modernizr.js
 js/underscore-min.js
+js/marked.min.js
 fonts/fontawesome-webfont.eot?v=4.1.0
 fonts/fontawesome-webfont.eot?#iefix&v=4.1.0
 fonts/fontawesome-webfont.woff?v=4.1.0

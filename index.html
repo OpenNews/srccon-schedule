@@ -74,10 +74,10 @@
 
         <script type="text/template" id="session-list-item-template">
         <div id="session-<%= sessionID %>" class="session-list-item session-<%= sessionClass %>" data-session="<%= sessionID.replace('-ghost','') %>">
-            <h4><%= sessionName %></h3>
+            <h4><%= smartypants(session.title) %></h3>
             <h5>
-                <span class="session-time"><%= sessionTime %></span>
-                <span class="session-room"><%= sessionRoom %></span>
+                <span class="session-time"><%= session.time %></span>
+                <span class="session-room"><%= smartypants(session.room) %></span>
             </h5>
         </div>
         </script>
@@ -92,11 +92,11 @@
                 <article id="schedule">
                     <div id="session-detail-<%= session.id %>" class="session-detail" data-session="<%= session.id %>">
                         <a id="show-full-schedule" href="/">&larr; Back to full schedule</a>
-                        <h2><%= formatPrettyText(session.title) %></h2>
-                        <% if (session.description) { %><p><%= formatMultiline(formatPrettyText(session.description)) %></p><% } %>
-                        <% if (session.leader) { %><p><strong>Session leader(s):</strong> <%= formatPrettyText(session.leader) %></p><% } %>
+                        <h2><%= smartypants(session.title) %></h2>
+                        <% if (session.description) { %><p><%= marked(session.description) %></p><% } %>
+                        <% if (session.leader) { %><p><strong>Session leader(s):</strong> <%= smartypants(session.leader) %></p><% } %>
                         <% if (session.day && session.time) { %><p><strong>Day & Time:</strong> <%= session.day %>, <%= session.time %></p><% } %>
-                        <% if (session.room) { %><p><strong>Room:</strong> <%= formatPrettyText(session.room) %></p><% } %>
+                        <% if (session.room) { %><p><strong>Room:</strong> <%= smartypants(session.room) %></p><% } %>
                     </div>
                 </article>
             </div>
@@ -105,6 +105,7 @@
         
         <script src="js/jquery-2.1.0.min.js"></script>
         <script src="js/underscore-min.js"></script>
+        <script src="js/marked.min.js"></script>
         <script src="js/schedule.js"></script>
     </body>
 </html>
