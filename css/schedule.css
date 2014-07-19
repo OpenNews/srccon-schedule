@@ -223,7 +223,8 @@ header p a {
     background-color: PapayaWhip;
 }
 
-.favorites .session-length-short {
+.favorites .session-length-short,
+.all-sessions .session-length-short {
     float: none;
     clear: both;
     width: auto;
@@ -345,5 +346,8 @@ header p a {
     }
     header h1 img {
         height: 2em;
+    }
+    #schedule-controls {
+        font-size: .75em;
     }
 }

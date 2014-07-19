@@ -7,7 +7,8 @@ function Schedule(options) {
         schedule.$toggles = $('<ul id="schedule-controls">').appendTo('header').hide();
         schedule.tabs = [
             { name: 'Thursday', tabDate: new Date(2014,6,24) },
-            { name: 'Friday', tabDate: new Date(2014,6,25) }
+            { name: 'Friday', tabDate: new Date(2014,6,25) },
+            { name: 'All' }
         ];
         schedule.sessionList = [];
         if (Modernizr.localstorage) {
@@ -73,25 +74,32 @@ function Schedule(options) {
             return i.length != '1 hour';
         })
     }
+
+    schedule.writeSession = function(targetBlock, templateData) {
+        targetBlock.find('.open-block').remove();
+        targetBlock.append(schedule.sessionCardTemplate(templateData));
+    }
+    
+    schedule.makeSessionItemTemplateData = function(sessionItem, showDay) {
+        var templatedata = {
+            session: sessionItem,
+            sessionID: sessionItem.id,
+            sessionClass: sessionItem.everyone ? 'everyone' : sessionItem.length == '1 hour' ? 'length-short' : 'length-long',
+            showDay: showDay,
+            smartypants: schedule.smartypants
+        }
+        
+        return templatedata;
+    }
     
     schedule.addSessionsToSchedule = function(sessionList) {
         var sessionList = sessionList || schedule.sessionList;
-        var addSession = function (targetBlock, templateData) {
-            targetBlock.find('.open-block').remove();
-            targetBlock.append(schedule.sessionListItemTemplate(templateData));
-        }
 
         _.each(sessionList, function(v, k) {
-            var templateData = {
-                session: v,
-                sessionID: v.id,
-                sessionClass: v.everyone ? 'everyone' : v.length == '1 hour' ? 'length-short' : 'length-long',
-                smartypants: schedule.smartypants
-            }
-            
             // write session into proper schedule block
             var targetBlock = $('#'+v.scheduleblock);
-            addSession(targetBlock, templateData);
+            var templateData = schedule.makeSessionItemTemplateData(v);
+            schedule.writeSession(targetBlock, templateData);
 
             // for long sessions, add ghost to next block as well
             if (v.length == '2.5 hours') {
@@ -99,7 +107,7 @@ function Schedule(options) {
                 templateData.sessionClass += ' session-ghost';
 
                 var targetBlock = $('#'+v.scheduleblock.replace('-1','-2'));
-                addSession(targetBlock, templateData);
+                schedule.writeSession(targetBlock, templateData);
             }
         });
         
@@ -164,7 +172,7 @@ function Schedule(options) {
     
     schedule.addToggles = function() {
         if (Modernizr.localstorage) {
-            schedule.tabs.push({ name: 'Favorites' });
+            schedule.tabs.splice(schedule.tabs.length-1, 0, { name: 'Favorites' });
         }
         
         var toggleWidth = (1 / schedule.tabs.length) * 100;
@@ -198,25 +206,47 @@ function Schedule(options) {
         $('#show-'+schedule.chosenTab).addClass('active');
         
         if (schedule.chosenTab == 'favorites') {
-            schedule.$container.addClass('favorites');
+            schedule.$container.removeClass().addClass('favorites');
             if (schedule.savedSessionList) {
                 schedule.showFavorites();
             } else {
                 schedule.loadSessions(schedule.showFavorites);
             }
+        } else if (schedule.chosenTab == 'all') {
+            schedule.$container.removeClass().addClass('all-sessions');
+            schedule.loadSessions(schedule.showFullSessionList);
         } else {
-            schedule.$container.removeClass('favorites');
+            schedule.$container.removeClass();
             schedule.$container.hide().empty().append(schedule.sessionListTemplate);
             schedule.loadSessions(schedule.addSessionsToSchedule);
             schedule.transitionElementIn(schedule.$container);
-
+            
             schedule.$container.find('.schedule-tab').hide();
             schedule.transitionElementIn($('#'+schedule.chosenTab));
         }
     }
     
+    schedule.showFullSessionList = function() {
+        schedule.$container.hide().empty();
+
+        var fullList = _.reject(schedule.sessionList, function(i) {
+            return i.everyone;
+        });
+        fullList = _.sortBy(fullList, function(i) {
+            return i.title;
+        });
+        
+        _.each(fullList, function(v, k) {
+            var templateData = schedule.makeSessionItemTemplateData(v, true);
+            schedule.writeSession(schedule.$container, templateData);
+        });
+        
+        schedule.addStars('.session-list-item');
+        schedule.transitionElementIn(schedule.$container);
+    }
+    
     schedule.showFavorites = function() {
-        schedule.$container.hide().empty().append('<p class="overline">Star sessions to store a list on this device.</p>').append(schedule.sessionListTemplate);
+        schedule.$container.hide().empty().append('<p class="overline">Star sessions to store a list on this device</p>').append(schedule.sessionListTemplate);
         schedule.addSessionsToSchedule(schedule.savedSessionList);
         schedule.transitionElementIn(schedule.$container);
     }
@@ -341,8 +371,8 @@ function Schedule(options) {
         $("script#session-list-template").html()
     );
 
-    schedule.sessionListItemTemplate = _.template(
-        $("script#session-list-item-template").html()
+    schedule.sessionCardTemplate = _.template(
+        $("script#session-card-template").html()
     );
 
     schedule.sessionDetailTemplate = _.template(

@@ -81,11 +81,11 @@
         </div>
         </script>
 
-        <script type="text/template" id="session-list-item-template">
+        <script type="text/template" id="session-card-template">
         <a href="#_session-<%= sessionID %>" id="session-<%= sessionID %>" class="session-list-item session-<%= sessionClass %>" data-session="<%= sessionID.replace('-ghost','') %>">
             <h4><%= smartypants(session.title) %></h3>
             <h5>
-                <span class="session-time"><%= session.time %></span>
+                <span class="session-time"><% if (showDay) { %><%= session.day %>, <% } %><%= session.time %></span>
                 <span class="session-room"><%= smartypants(session.room) %></span>
             </h5>
         </a>
