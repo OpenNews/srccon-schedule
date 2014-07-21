@@ -84,10 +84,22 @@
         <script type="text/template" id="session-card-template">
         <a href="#_session-<%= sessionID %>" id="session-<%= sessionID %>" class="session-list-item session-<%= sessionClass %>" data-session="<%= sessionID.replace('-ghost','') %>">
             <h4><%= smartypants(session.title) %></h3>
-            <h5>
+            <% if (showLeaders) { %><p class="session-leaders"><%= smartypants(session.leader) %></p><% } %>
+            <p>
                 <span class="session-time"><% if (showDay) { %><%= session.day %>, <% } %><%= session.time %></span>
                 <span class="session-room"><%= smartypants(session.room) %></span>
-            </h5>
+            </p>
+        </a>
+        </script>
+
+        <script type="text/template" id="session-list-item-template">
+        <a href="#_session-<%= sessionID %>" id="session-<%= sessionID %>" class="session-list-item" data-session="<%= sessionID.replace('-ghost','') %>">
+            <h4><%= smartypants(session.title) %></h3>
+            <% if (showLeaders) { %><p class="session-leaders"><%= smartypants(session.leader) %></p><% } %>
+            <p>
+                <span class="session-time"><% if (showDay) { %><%= session.day %>, <% } %><%= session.time %></span>
+                <span class="session-room"><%= smartypants(session.room) %></span>
+            </p>
         </a>
         </script>
 

@@ -80,13 +80,18 @@ function Schedule(options) {
         targetBlock.append(schedule.sessionCardTemplate(templateData));
     }
     
-    schedule.makeSessionItemTemplateData = function(sessionItem, showDay) {
+    schedule.makeSessionItemTemplateData = function(sessionItem, expanded) {
         var templatedata = {
             session: sessionItem,
             sessionID: sessionItem.id,
             sessionClass: sessionItem.everyone ? 'everyone' : sessionItem.length == '1 hour' ? 'length-short' : 'length-long',
-            showDay: showDay,
+            showDay: false,
+            showLeaders: false,
             smartypants: schedule.smartypants
+        }
+        if (expanded) {
+            templatedata.showDay = true;
+            templatedata.showLeaders = true;
         }
         
         return templatedata;
