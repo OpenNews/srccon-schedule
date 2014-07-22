@@ -317,8 +317,8 @@
         "title": "Mobile is the future / mobile sucks / the future sucks", 
         "id": "27", 
         "length": "1 hour", 
-        "scheduleblock": "friday-am-2", 
-        "time": "12:30-1:30pm", 
+        "scheduleblock": "friday-pm-1", 
+        "time": "3-4pm", 
         "leader": "Alastair Coote", 
         "day": "Friday", 
         "description": "Mobile is the future. There can’t really be any argument about that now - mobile audience shares just keep on rising and if your audience isn’t over 50% mobile yet, it will be soon. There’s only one problem: developing for mobile sucks.We'll gather together, group therapy style, and talk out some of the biggest mobile challenges, in areas like:- Small screen sizes and orientation changes- Restrictions on video and audio functionality- Cross-platform testing and debugging- Touch events (and the lack of mouse events)- Connectivity issues and performance restrictionsand plenty more besides. Bring your own horror stories and solutions to share. We'll get through this together."
@@ -353,8 +353,8 @@
         "title": "Making things happen with small teams", 
         "id": "30", 
         "length": "1 hour", 
-        "scheduleblock": "friday-pm-1", 
-        "time": "3-4pm", 
+        "scheduleblock": "friday-am-2", 
+        "time": "12:30-1:30pm", 
         "leader": "Kaeti Hinck", 
         "day": "Friday", 
         "description": "For the small news dev team (including teams of one), resources are often scarce and your time can be split between a number of roles. Let's talk about the best strategies to make the most of what we have without feeling hopeless or falling prey to burn out. Let's gather with our small-team peers (even if you're just getting started!) and share what's helped us stay productive, what *doesn't* work, ideas for proving worth to potentially skeptical colleagues, and practical tools to maximize our capabilities."
@@ -486,7 +486,7 @@
         "id": "41", 
         "length": "", 
         "scheduleblock": "friday-morning", 
-        "time": "9:30-10:45am", 
+        "time": "10-10:45am", 
         "leader": "", 
         "day": "Friday", 
         "description": "The most important meal of the day (or, at least, the first!), share it with us. Coffee hacking stations will be in full effect today as well, if you're nursing a little too much late-night cheesesteak."
