@@ -100,6 +100,7 @@
                 <span class="session-time"><% if (showDay) { %><%= session.day %>, <% } %><%= session.time %></span>
                 <span class="session-room"><%= smartypants(session.room) %></span>
             </p>
+            <div class="hidden session-description"><% if (session.description) { %><%= marked(session.description.replace('http://','').replace('https://','')) %><% } %></div>
         </a>
         </script>
 
@@ -114,10 +115,14 @@
                     <div id="session-detail-<%= session.id %>" class="session-detail" data-session="<%= session.id %>">
                         <a id="show-full-schedule" href="/">&larr; Back to full schedule</a>
                         <h2><%= smartypants(session.title) %></h2>
-                        <% if (session.description) { %><p><%= marked(session.description) %></p><% } %>
-                        <% if (session.leader) { %><p><strong>Session leader(s):</strong> <%= smartypants(session.leader) %></p><% } %>
-                        <% if (session.day && session.time) { %><p><strong>Day & Time:</strong> <%= session.day %>, <%= session.time %></p><% } %>
-                        <% if (session.room) { %><p><strong>Room:</strong> <%= smartypants(session.room) %></p><% } %>
+                        <% if (session.leader) { %><p class="session-leaders"><strong>Session leader(s):</strong> <%= smartypants(session.leader) %></p><% } %>
+                        <% if (session.day || session.time || session.room) { %>
+                        <p>
+                            <span class="session-time"><strong>Day & Time:</strong> <% if (session.day) { %><%= session.day %>, <% } %><%= session.time %></span>
+                            <% if (session.room) { %><span class="session-room"><strong>Room:</strong> <%= smartypants(session.room) %></span><% } %>
+                        </p>
+                        <% } %>
+                        <% if (session.description) { %><%= marked(session.description) %><% } %>
                     </div>
                 </article>
             </div>

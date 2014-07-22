@@ -75,9 +75,12 @@ function Schedule(options) {
         })
     }
 
-    schedule.writeSession = function(targetBlock, templateData) {
+    schedule.writeSession = function(targetBlock, templateData, template) {
+        if (!template) {
+            var template = schedule.sessionCardTemplate
+        }
         targetBlock.find('.open-block').remove();
-        targetBlock.append(schedule.sessionCardTemplate(templateData));
+        targetBlock.append(template(templateData));
     }
     
     schedule.makeSessionItemTemplateData = function(sessionItem, expanded) {
@@ -233,6 +236,7 @@ function Schedule(options) {
     
     schedule.showFullSessionList = function() {
         schedule.$container.hide().empty();
+        schedule.addListControls();
 
         var fullList = _.reject(schedule.sessionList, function(i) {
             return i.everyone;
@@ -243,11 +247,57 @@ function Schedule(options) {
         
         _.each(fullList, function(v, k) {
             var templateData = schedule.makeSessionItemTemplateData(v, true);
-            schedule.writeSession(schedule.$container, templateData);
+            schedule.writeSession(schedule.$container, templateData, schedule.sessionListItemTemplate);
         });
         
         schedule.addStars('.session-list-item');
         schedule.transitionElementIn(schedule.$container);
+    }
+    
+    schedule.addListControls = function() {
+        var filterForm = '<div id="filter-form">\
+                <label for="list-filter">Search names, leaders and descriptions</label>\
+                <input class="filter" type="text" id="list-filter" />\
+            </div>';
+        $(filterForm).appendTo(schedule.$container);
+
+        var expand = $('<a id="show-descriptions" data-action="show" href="#"><i class="fa fa-plus-circle"></i> Show descriptions</a>').appendTo(schedule.$container);
+        
+        var filteredList = $('#schedule');
+        $('#list-filter').change(function() {
+            var filterVal = $(this).val();
+            if (filterVal) {
+                var filteredSessions = _.filter(schedule.sessionList, function(v, k) {
+                    return (v.title.toUpperCase().indexOf(filterVal.toUpperCase()) >= 0)
+                           || (v.leader.toUpperCase().indexOf(filterVal.toUpperCase()) >= 0)
+                           || (v.description.toUpperCase().indexOf(filterVal.toUpperCase()) >= 0);
+                });
+                var filteredIDs = _.pluck(filteredSessions, 'id');
+                
+                $('.session-list-item').hide()
+                $('.session-description').hide();
+                _.each(filteredIDs, function(i) {
+                    $('#session-'+i).show().find('.session-description').show();
+                })
+                expand.hide();
+            } else {
+                // nothing in filter form, so make sure everything is visible
+                $('.session-description').hide();
+                filteredList.find('.session-list-item').css('display','block');
+                expand.show();
+            }
+        
+            // show 'no results' message if we've removed all the items
+            if ($('.session-list-item:visible').length == 0) {
+                $('#no-results').remove();
+                $('#filter-form').after('<p id="no-results">No matching results found.</p>');
+            } else {
+                $('#no-results').remove();
+            }
+            return false;
+        }).keyup(function() {
+            $(this).change();
+        });
     }
     
     schedule.showFavorites = function() {
@@ -284,6 +334,21 @@ function Schedule(options) {
                 schedule.updateHash('');
                 schedule.clearSessionDetail();
                 schedule.makeSchedule();
+            }
+        });
+        
+        // toggle session descriptions
+        schedule.$container.on('click', '#show-descriptions', function(e) {
+            e.preventDefault();
+            var clicked = $(this);
+            var action = clicked.data('action');
+            
+            if (action == 'show') {
+                $('.session-list-item').find('.session-description').show();
+                clicked.html('<i class="fa fa-minus-circle"></i> Hide descriptions').data('action', 'hide');
+            } else {
+                $('.session-list-item').find('.session-description').hide();
+                clicked.html('<i class="fa fa-plus-circle"></i> Show descriptions').data('action', 'show');
             }
         });
 
@@ -378,6 +443,10 @@ function Schedule(options) {
 
     schedule.sessionCardTemplate = _.template(
         $("script#session-card-template").html()
+    );
+
+    schedule.sessionListItemTemplate = _.template(
+        $("script#session-list-item-template").html()
     );
 
     schedule.sessionDetailTemplate = _.template(

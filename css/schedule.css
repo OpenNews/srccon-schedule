@@ -21,6 +21,12 @@
 .fa-star:before {
   content: "\f005";
 }
+.fa-plus-circle:before {
+  content: "\f055";
+}
+.fa-minus-circle:before {
+  content: "\f056";
+}
 
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
@@ -81,6 +87,7 @@ header p a {
     list-style: none;
     width: 50%;
 }
+
 #schedule-controls li {
     display: inline-block;
 }
@@ -194,6 +201,45 @@ header p a {
     bottom: auto;
 }
 
+.all-sessions .session-description {
+    word-wrap: break-word;
+}
+
+#show-descriptions {
+    font-size: .83em;
+    padding: 2em 0 0;
+    display: block;
+    text-decoration: none;
+    color: #111;
+    margin-right: 2%;
+    float: right;
+}
+#show-descriptions i {
+    color: #fc6e1f;
+}
+
+#filter-form {
+    font-size: .83em;
+    margin: 0 0 2em 0;
+    padding: 0;
+    width: 50%;
+    float: left;
+}
+
+#filter-form input {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    margin-top: .25em;
+}
+#no-results {
+    font-size: .83em;
+}
+
+.session-description ul {
+    font-size: .83em;
+}
+
 .favorite {
     color: #fff;
     font-size: 1.2em;
@@ -279,6 +325,10 @@ header p a {
     font-size: .83em;
 }
 
+.hidden {
+    display: none;
+}
+
 .clearfix:before,
 .clearfix:after,
 .page-block:before,
@@ -336,8 +386,15 @@ header p a {
     header {
         margin-left: 0;
     }
-    #schedule-controls {
+    #schedule-controls,
+    #filter-form {
         width: 100%;
+        margin-bottom: 1em;
+    }
+    #show-descriptions {
+        display: inline-block;
+        padding: 0;
+        margin: 0 0 2em 0;
     }
 }
 
@@ -352,6 +409,13 @@ header p a {
     }
     header p {
         font-size: .75em;
+    }
+    .session-detail .session-room {
+        display: block;
+        margin-top: 1em;
+    }
+    #filter-form {
+        margin-top: -1.5em;
     }
 }
 @media only screen and (max-width: 420px) {
