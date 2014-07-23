@@ -317,8 +317,8 @@
         "title": "Mobile is the future / mobile sucks / the future sucks", 
         "id": "27", 
         "length": "1 hour", 
-        "scheduleblock": "friday-pm-1", 
-        "time": "3-4pm", 
+        "scheduleblock": "friday-pm-2", 
+        "time": "4:30-5:30pm", 
         "leader": "Alastair Coote", 
         "day": "Friday", 
         "description": "Mobile is the future. There can’t really be any argument about that now - mobile audience shares just keep on rising and if your audience isn’t over 50% mobile yet, it will be soon. There’s only one problem: developing for mobile sucks.We'll gather together, group therapy style, and talk out some of the biggest mobile challenges, in areas like:- Small screen sizes and orientation changes- Restrictions on video and audio functionality- Cross-platform testing and debugging- Touch events (and the lack of mouse events)- Connectivity issues and performance restrictionsand plenty more besides. Bring your own horror stories and solutions to share. We'll get through this together."
@@ -353,8 +353,8 @@
         "title": "Making things happen with small teams", 
         "id": "30", 
         "length": "1 hour", 
-        "scheduleblock": "friday-am-2", 
-        "time": "12:30-1:30pm", 
+        "scheduleblock": "friday-pm-1", 
+        "time": "3-4pm", 
         "leader": "Kaeti Hinck", 
         "day": "Friday", 
         "description": "For the small news dev team (including teams of one), resources are often scarce and your time can be split between a number of roles. Let's talk about the best strategies to make the most of what we have without feeling hopeless or falling prey to burn out. Let's gather with our small-team peers (even if you're just getting started!) and share what's helped us stay productive, what *doesn't* work, ideas for proving worth to potentially skeptical colleagues, and practical tools to maximize our capabilities."
@@ -401,8 +401,8 @@
         "title": "How to train your newsroom", 
         "id": "34", 
         "length": "1 hour", 
-        "scheduleblock": "friday-pm-2", 
-        "time": "4:30-5:30pm", 
+        "scheduleblock": "friday-am-2", 
+        "time": "12:30-1:30pm", 
         "leader": "Jaeah Lee and Tasneem Raja", 
         "day": "Friday", 
         "description": "Everyone agrees that siloed skills are bad. But unlocking your newsroom's nerd potential is hard. At Mother Jones, we've been developing an in-house skills sharing program that's had a real multiplier effect. Let's trade notes on what you've tried at your shops. We'll start with the philosophy that everyone is both a teacher and a learner. Think about it: a newsroom in which copy editors learn from open-source geeks, and vice versa, is a better newsroom. In this session, let's take software's pair programming model and reimagine it for journalism."
