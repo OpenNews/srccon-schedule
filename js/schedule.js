@@ -2,6 +2,7 @@ function Schedule(options) {
     var schedule = {};
     
     schedule.init = function(options) {
+        schedule.offlineMode = true;
         schedule.sourceJSON = 'sessions.json';
         schedule.$container = $('#schedule');
         schedule.$toggles = $('<ul id="schedule-controls">').appendTo('header').hide();
@@ -328,7 +329,7 @@ function Schedule(options) {
         schedule.$container.on('click', '#show-full-schedule', function(e) {
             e.preventDefault();
             
-            if (window.history.ready) {
+            if (window.history.ready && !schedule.offlineMode) {
                 window.history.back();
             } else {
                 schedule.updateHash('');
@@ -401,7 +402,7 @@ function Schedule(options) {
             schedule.clearSessionDetail();
             schedule.load();
         };
-
+        
         // check for new appcache on page load
         window.addEventListener('load', function(e) {
             window.applicationCache.addEventListener('updateready', function(e) {

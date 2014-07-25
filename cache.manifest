@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# version 1
+# version 2
 img/favicon.ico
 img/srccon_flag.png
 img/touch-icon-144x144.png
@@ -28,6 +28,6 @@ fonts/OpenSans-Regular-webfont.ttf
 fonts/OpenSans-Bold-webfont.ttf
 fonts/OpenSans-Regular-webfont.svg
 fonts/OpenSans-Bold-webfont.svg
-js/schedule.js
 sessions.json
 css/schedule.css
+js/schedule.js
