@@ -2,7 +2,7 @@ function Schedule(options) {
     var schedule = {};
     
     schedule.init = function(options) {
-        schedule.offlineMode = true;
+        schedule.offlineMode = false;
         schedule.sourceJSON = 'sessions.json';
         schedule.$container = $('#schedule');
         schedule.$toggles = $('<ul id="schedule-controls">').appendTo('header').hide();
