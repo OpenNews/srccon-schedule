@@ -1,98 +1,10 @@
 [
-    {
-        "day": "Thursday", 
-        "description": "Get your badges and get some food (plus plenty of coffee), as you gear up for the first day of SRCCON!", 
-        "everyone": 1, 
-        "id": 1, 
-        "leader": "", 
-        "length": "", 
-        "room": "Memorial", 
-        "scheduleblock": "thursday-morning", 
-        "time": "9-10am", 
-        "title": "Registration & Breakfast"
-    }, 
-    {
-        "day": "Thursday", 
-        "description": "Let's kick SRCCON off right, with a welcome, some scene-setting, and a little getting-to-know-you. No songs or trust falls, we promise.", 
-        "everyone": 1, 
-        "id": 2, 
-        "leader": "", 
-        "length": "", 
-        "room": "Memorial", 
-        "scheduleblock": "thursday-morning", 
-        "time": "10-10:30am", 
-        "title": "Welcome to SRCCON"
-    }, 
-    {
-        "day": "Thursday", 
-        "description": "", 
-        "everyone": 1, 
-        "id": 3, 
-        "leader": "", 
-        "length": "", 
-        "room": "Memorial", 
-        "scheduleblock": "thursday-lunch", 
-        "time": "1:30-3pm", 
-        "title": "Lunch at SRCCON"
-    }, 
-    {
-        "day": "Thursday", 
-        "description": "", 
-        "everyone": 1, 
-        "id": 4, 
-        "leader": "", 
-        "length": "", 
-        "room": "Memorial", 
-        "scheduleblock": "thursday-evening", 
-        "time": "5:30-7pm", 
-        "title": "Dinner at SRCCON"
-    }, 
-    {
-        "day": "Thursday", 
-        "description": "", 
-        "everyone": 1, 
-        "id": 5, 
-        "leader": "", 
-        "length": "", 
-        "room": "", 
-        "scheduleblock": "thursday-evening", 
-        "time": "7-9pm", 
-        "title": "Evening sessions"
-    }, 
-    {
-        "day": "Friday", 
-        "description": "", 
-        "everyone": 1, 
-        "id": 6, 
-        "leader": "", 
-        "length": "", 
-        "room": "Memorial", 
-        "scheduleblock": "friday-morning", 
-        "time": "10-10:45am", 
-        "title": "Breakfast"
-    }, 
-    {
-        "day": "Friday", 
-        "description": "", 
-        "everyone": 1, 
-        "id": 7, 
-        "leader": "", 
-        "length": "", 
-        "room": "Memorial", 
-        "scheduleblock": "friday-lunch", 
-        "time": "1:30-3pm", 
-        "title": "Lunch at SRCCON"
-    }, 
-    {
-        "day": "Friday", 
-        "description": "This is it. We promise no group sing-along, but we don't promise not to shed a tear or two (probably because we'll be really tired). Help us close out SRCCON and set the stage for what happens next.", 
-        "everyone": 1, 
-        "id": 8, 
-        "leader": "", 
-        "length": "", 
-        "room": "Memorial", 
-        "scheduleblock": "friday-evening", 
-        "time": "5:30-6pm", 
-        "title": "Closing"
-    }
+    "{'everyone': 1, 'room': 'Memorial', 'title': 'Registration & Breakfast', 'id': 1, 'length': '', 'scheduleblock': 'thursday-morning', 'time': '9-10am', 'leader': '', 'day': 'Thursday', 'description': 'Get your badges and get some food (plus plenty of coffee), as you gear up for the first day of SRCCON!'}", 
+    "{'everyone': 1, 'room': 'Memorial', 'title': 'Welcome to SRCCON', 'id': 2, 'length': '', 'scheduleblock': 'thursday-morning', 'time': '10-10:30am', 'leader': '', 'day': 'Thursday', 'description': \"Let's kick SRCCON off right, with a welcome, some scene-setting, and a little getting-to-know-you. No songs or trust falls, we promise.\"}", 
+    "{'everyone': 1, 'room': 'Memorial', 'title': 'Lunch at SRCCON', 'id': 3, 'length': '', 'scheduleblock': 'thursday-lunch', 'time': '1:30-3pm', 'leader': '', 'day': 'Thursday', 'description': ''}", 
+    "{'everyone': 1, 'room': 'Memorial', 'title': 'Dinner at SRCCON', 'id': 4, 'length': '', 'scheduleblock': 'thursday-evening', 'time': '5:30-7pm', 'leader': '', 'day': 'Thursday', 'description': ''}", 
+    "{'everyone': 1, 'room': '', 'title': 'Evening sessions', 'id': 5, 'length': '', 'scheduleblock': 'thursday-evening', 'time': '7-9pm', 'leader': '', 'day': 'Thursday', 'description': ''}", 
+    "{'everyone': 1, 'room': 'Memorial', 'title': 'Breakfast', 'id': 6, 'length': '', 'scheduleblock': 'friday-morning', 'time': '10-10:45am', 'leader': '', 'day': 'Friday', 'description': ''}", 
+    "{'everyone': 1, 'room': 'Memorial', 'title': 'Lunch at SRCCON', 'id': 7, 'length': '', 'scheduleblock': 'friday-lunch', 'time': '1:30-3pm', 'leader': '', 'day': 'Friday', 'description': ''}", 
+    "{'everyone': 1, 'room': 'Memorial', 'title': 'Closing', 'id': 8, 'length': '', 'scheduleblock': 'friday-evening', 'time': '5:30-6pm', 'leader': '', 'day': 'Friday', 'description': \"This is it. We promise no group sing-along, but we don't promise not to shed a tear or two (probably because we'll be really tired). Help us close out SRCCON and set the stage for what happens next.\"}"
 ]
