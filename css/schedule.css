@@ -181,6 +181,9 @@ header p a {
 .session-detail {
     position: relative;
 }
+.session-detail h3 {
+    margin-top: 2em;
+}
 
 .session-list-item,
 .open-block {
