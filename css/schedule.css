@@ -61,10 +61,10 @@ body {
     background-color: #fff;
     font-size: 16px;
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    margin: 0;
 }
 .container {
     position: relative;
-    background: #fff;
     max-width: 1140px;
     margin: 2em auto;
     padding-left: 12em;
@@ -107,6 +107,7 @@ header p a {
 }
 
 #schedule-controls {
+    clear: both;
     font-size: .83em;
     margin: 2em auto;
     padding: 0;
@@ -373,6 +374,104 @@ header p a {
 .page-block {
     *zoom: 1;
 }
+
+/* SINKER BODGE JOB */
+
+header {
+  overflow-x: hidden;
+  height: 400px;
+  background-size: 1500px;
+  background-position: 0 0;
+  max-width: 1500px;
+  margin: 0px auto;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+#headertop {
+  width: 100%;
+  height: 70px;
+  background-color:rgba(0, 0, 0, 0.3)
+}
+
+header.postits {
+  background-image: url(http://www.srccon.org/media/img/2015/post-its.jpg);
+}
+
+.container {
+  box-sizing: border-box;
+  display: block;
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 0px;
+  position: relative;
+}
+
+header a#cornerlogo img {
+  width: 150px;
+  position: absolute;
+  top: 5px;
+}
+
+header nav {
+  float: right;
+  overflow: hidden;
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+header nav ul {
+  padding-left: 0px;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+header nav ul li {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px 10px;
+  padding-bottom: 5px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+header nav ul li a:hover {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+#headbox {
+  clear: both;
+  width: 100%;
+  max-width: 660px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  right: 1%;
+  padding-top: 70px;
+}
+
+#headbox h2 {
+  color: white;
+  font-size: 3em;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+#headbox h3 {
+  color: white;
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+
+/* END SINKER BODGE JOB */
 
 @media only screen and (max-width: 940px) {
     #schedule-controls ul {
