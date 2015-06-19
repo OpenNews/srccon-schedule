@@ -113,7 +113,7 @@ header a#cornerlogo img {
 header nav {
   float: right;
   overflow: hidden;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1.7em;
 }
 
@@ -153,6 +153,7 @@ header nav ul li a:hover {
   right: 1%;
   padding-top: 40px;
   font-size: 1.1em;
+  line-height: 1;
 }
 
 #headbox h2 {
@@ -462,6 +463,9 @@ header nav ul li a:hover {
     header {
         background-size: cover;
     }
+    .header-container  {
+        margin: 0 1em;
+    }
 }
 
 @media only screen and (min-width: 900px) {
@@ -565,6 +569,9 @@ header nav ul li a:hover {
         width: 100px;
         top: 10px;
         left: -1em;
+    }
+    #headertop {
+        height: 40px;
     }
     #headbox {
         margin: 1em 0;
