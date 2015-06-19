@@ -58,8 +58,8 @@
 
 body {
     color: #111;
-    background-color: #fff;
     font-size: 18px;
+    background-color: #fff;
     font-family: "ff-tisa-sans-web-pro", "Open Sans", sans-serif;
     margin: 0;
 }
@@ -71,13 +71,13 @@ body {
     padding-left: 10em;
     padding-right: 1em;
 }
-
 a {
     color: #184774;
 }
 
 /* 2015 PAGE HEADER */
 header {
+    font-size: 16px;
   overflow-x: hidden;
   height: 200px;
   background-size: 1200px;
@@ -113,7 +113,7 @@ header a#cornerlogo img {
 header nav {
   float: right;
   overflow: hidden;
-  font-size: 1em;
+  font-size: 1.1em;
   line-height: 1.7em;
 }
 
@@ -156,15 +156,19 @@ header nav ul li a:hover {
   line-height: 1;
 }
 
+#headbox h2,
+#headbox h3 {
+    color: white;
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
 #headbox h2 {
-  color: white;
   font-size: 1.8em;
   margin-bottom: 10px;
   margin-top: 0;
 }
 
 #headbox h3 {
-  color: white;
   font-size: inherit;
   font-weight: 400;
   margin-top: 0px;
@@ -450,6 +454,15 @@ header nav ul li a:hover {
     *zoom: 1;
 }
 
+@media screen and (max-width: 1020px) {
+    header {
+        width: 100%;
+    }
+    .header-container  {
+        margin: 0 2em;
+    }
+}
+
 @media only screen and (max-width: 940px) {
     #schedule-controls ul {
         float: none;
@@ -462,9 +475,6 @@ header nav ul li a:hover {
     }
     header {
         background-size: cover;
-    }
-    .header-container  {
-        margin: 0 1em;
     }
 }
 
@@ -560,7 +570,7 @@ header nav ul li a:hover {
         height: 150px;
     }
     header nav {
-        font-size: .8em;
+        font-size: .9em;
     }
     header nav ul {
         margin-top: .33em;
@@ -568,16 +578,13 @@ header nav ul li a:hover {
     header a#cornerlogo img {
         width: 100px;
         top: 10px;
-        left: -1em;
+        left: -25px;
     }
     #headertop {
         height: 40px;
     }
     #headbox {
         margin: 1em 0;
-    }
-    .header-container {
-        margin: 0 1em;
     }
 }
 
