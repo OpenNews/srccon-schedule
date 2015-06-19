@@ -6,6 +6,8 @@
         <title>SRCCON 2015 Schedule</title>
         <meta name="description" content="Session schedule for SRCCON 2015, June 25 & 26 in Minneapolis.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://use.typekit.net/xnh2etj.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
         <link rel="stylesheet" href="css/schedule.css">
         <link rel="shortcut icon" href="img/favicon.ico" />
         <link rel="apple-touch-icon-precomposed" href="img/touch-icon-144x144.png" sizes="144x144" />
@@ -21,14 +23,27 @@
         <script src="js/modernizr.js"></script>
     </head>
     <body>
-        <div class="container">
-            <header>
-                <h1><a href="/"><img src="img/srccon_flag.png" alt="SRCCON"> 2015 Schedule</a></h1>
-                <p>
-                    June 25 & 26 &bull; <a href="https://goo.gl/maps/zWoYu">McNamara Alumni Center</a>, Minneapolis, MN &bull; <a href="http://srccon.org">Full SRCCON site</a>
-                </p>
-            </header>
+        <header>
+            <div id="headertop">
+                <div class="header-container">
+                    <a href="/" id = "cornerlogo"><img src="http://www.srccon.org/media/img/2015/corner_logo.png"></a>
 
+                    <nav class="navigation">
+                        <ul>
+                            <li id="sessions"><a href="/">schedule</a></li>
+                            <li id="logistics"><a href="http://srccon.org/logistics">logistics</a></li>
+                            <li id="docs"><a href="http://srccon.org/docs">docs</a></li>
+                        </ul>
+                    </nav>
+                    <div id="headbox">
+                        <h2>Schedule</h2>
+                        <h3>Two days of peer-led conversations, hands-on workshops, and skillshares.</h3>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div id="schedule-controls"></div>
             <article id="schedule"></article>
         </div>
 
@@ -106,11 +121,26 @@
 
         <script type="text/template" id="session-detail-template">
         <div id="session-detail-wrapper">
-            <div class="container">
-                <header>
-                    <h1><a href="/"><img src="img/srccon_flag.png" alt="SRCCON"> 2015 Schedule</a></h1>
-                </header>
+            <header>
+                <div id="headertop">
+                    <div class="header-container">
+                        <a href="/" id = "cornerlogo"><img src="http://www.srccon.org/media/img/2015/corner_logo.png"></a>
 
+                        <nav class="navigation">
+                            <ul>
+                                <li id="sessions"><a href="/">schedule</a></li>
+                                <li id="logistics"><a href="http://srccon.org/logistics">logistics</a></li>
+                                <li id="docs"><a href="http://srccon.org/docs">docs</a></li>
+                            </ul>
+                        </nav>
+                        <div id="headbox">
+                            <h2>Schedule</h2>
+                            <h3>Two days of peer-led conversations, hands-on workshops, and skillshares.</h3>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="container">
                 <article id="schedule">
                     <div id="session-detail-<%= session.id %>" class="session-detail" data-session="<%= session.id %>">
                         <a id="show-full-schedule" href="/">&larr; Back to full schedule</a>

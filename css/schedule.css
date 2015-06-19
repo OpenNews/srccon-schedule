@@ -59,54 +59,124 @@
 body {
     color: #111;
     background-color: #fff;
-    font-size: 16px;
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-family: "ff-tisa-sans-web-pro", "Open Sans", sans-serif;
+    margin: 0;
 }
 .container {
     position: relative;
     background: #fff;
     max-width: 1140px;
     margin: 2em auto;
-    padding-left: 12em;
+    padding-left: 10em;
+    padding-right: 1em;
 }
 
 a {
     color: #184774;
 }
 
+/* 2015 PAGE HEADER */
 header {
-    margin: 0 0 3em -6em;
+  overflow-x: hidden;
+  height: 200px;
+  background-size: 1200px;
+  background-position: 0 0;
+  max-width: 1200px;
+  margin: 0px auto;
+  margin-bottom: 50px;
+  position: relative;
+  background-image: url(http://www.srccon.org/media/img/2015/post-its.jpg);
 }
 
-header h1 {
-    font-weight: bold;
-    font-size: 3em;
-    line-height: 1.2em;
-    margin-bottom: .5em;
-}
-header h1 a {
-    text-decoration: none;
-    color: #111;
+#headertop {
+  width: 100%;
+  height: 70px;
+  background-color:rgba(0, 0, 0, 0.3)
 }
 
-header h1 img {
-    display: inline;
-    height: 1.2em;
-    vertical-align: bottom;
-    margin-right: .25em;
+.header-container {
+  box-sizing: border-box;
+  display: block;
+  max-width: 1000px;
+  margin: 0px auto;
+  padding: 0px;
+  position: relative;
 }
 
-header h1,
-header p {
-    clear: both;
-    text-align: center;
+header a#cornerlogo img {
+  width: 150px;
+  position: absolute;
+  top: 5px;
 }
 
-header p a {
-    white-space: nowrap;
+header nav {
+  float: right;
+  overflow: hidden;
+  font-size: 1.1em;
+  line-height: 1.7em;
 }
+
+header nav ul {
+  padding-left: 0px;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+header nav ul li {
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px 10px;
+  padding-bottom: 5px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+    border-bottom: 1px solid #ccc;
+}
+
+header nav ul li#sessions a,
+header nav ul li a:hover {
+  border-bottom: 1px solid white;
+}
+
+#headbox {
+  clear: both;
+  width: 100%;
+  max-width: 660px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  right: 1%;
+  padding-top: 40px;
+  font-size: 1.1em;
+}
+
+#headbox h2 {
+  color: white;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+#headbox h3 {
+  color: white;
+  font-size: inherit;
+  font-weight: 400;
+  margin-top: 0px;
+}
+/* END 2015 PAGE HEADER */
 
 #schedule-controls {
+    clear: both;
+    margin: 0 0 3em -6em;
+    font-family: "Open Sans", sans-serif;
+}
+
+#schedule-controls ul {
     font-size: .83em;
     margin: 2em auto;
     padding: 0;
@@ -161,6 +231,7 @@ header p a {
     margin: 1em 1em 1em 0;
 }
 .schedule-tab h3 span {
+    font-family: "Open Sans", sans-serif;
     background-color: #fff;
     font-size: .67em;
     margin-top: -.75em;
@@ -188,6 +259,9 @@ header p a {
 .session-detail h3 {
     margin-top: 2em;
 }
+.session-detail li {
+    margin-bottom: .5em;
+}
 
 .session-list-item,
 .open-block {
@@ -209,6 +283,7 @@ header p a {
 
 .session-list-item h4 {
     margin: 0 0 .5em;
+    line-height: 1.5;
 }
 
 .session-list-item p {
@@ -293,7 +368,7 @@ header p a {
     line-height: 1;
     background-color: #ffd0b6;
     width: 1.8em;
-    height: 1.8em;
+    height: 1.6em;
     padding: 0.33em;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -384,6 +459,9 @@ header p a {
     #schedule-controls a {
         padding: .5em 0;
     }
+    header {
+        background-size: cover;
+    }
 }
 
 @media only screen and (min-width: 900px) {
@@ -415,7 +493,13 @@ header p a {
     header {
         margin-left: 0;
     }
-    #schedule-controls,
+    #schedule-controls {
+        width: 100%;
+        margin: 0 0 3em 0;
+    }
+    #schedule-controls ul {
+        padding-right: 0;
+    }
     #filter-form {
         width: 100%;
         margin-bottom: 1em;
@@ -424,6 +508,25 @@ header p a {
         display: inline-block;
         padding: 0;
         margin: 0 0 2em 0;
+    }
+    #headbox {
+        right: auto;
+        width: 100%;
+        margin: 1em;
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    header {
+        height: 180px;
+        margin-bottom: 30px;
+    }
+    #headbox {
+        padding-top: 50px;
+    }
+    #headbox h3 {
+        display: none;
     }
 }
 
@@ -447,6 +550,30 @@ header p a {
         margin-top: -1.5em;
     }
 }
+
+@media only screen and (max-width: 480px) {
+    header {
+        height: 150px;
+    }
+    header nav {
+        font-size: .8em;
+    }
+    header nav ul {
+        margin-top: .33em;
+    }
+    header a#cornerlogo img {
+        width: 100px;
+        top: 10px;
+        left: -1em;
+    }
+    #headbox {
+        margin: 1em 0;
+    }
+    .header-container {
+        margin: 0 1em;
+    }
+}
+
 @media only screen and (max-width: 420px) {
     header h1 {
         font-size: 1.8em;
