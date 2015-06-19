@@ -442,6 +442,14 @@ function Schedule(options) {
                 schedule.makeSchedule();
             }
         });
+
+        // scroll down to transcription inside session detail view
+        schedule.$container.on('click', '#show-transcription', function(e) {
+            e.preventDefault();
+            
+            var targetPos = schedule.$container.offset().top + $("#transcription").offset().top;
+            $("#session-detail-wrapper").scrollTop(targetPos);
+        });
         
         // toggle session descriptions on "All" sessions tab
         schedule.$container.on('click', '#show-descriptions', function(e) {

@@ -122,7 +122,7 @@
                             <% if (session.room) { %><span class="session-room"><strong>Room:</strong> <%= smartypants(session.room) %></span><% } %>
                         </p>
                         <% } %>
-                        <% if (session.transcription) { %><p><strong><a href="#transcription">This session will be transcribed</a></strong><% } %>
+                        <% if (session.transcription) { %><p><strong><a id="show-transcription" href="#transcription">This session will be transcribed</a></strong><% } %>
                         <% if (session.description) { %><%= marked(session.description) %><% } %>
                         <% if (session.transcription) { %>
                         <p id="transcription"><strong>Live transcription will appear here for this session</strong></p>
