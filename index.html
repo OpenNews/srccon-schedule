@@ -122,7 +122,12 @@
                             <% if (session.room) { %><span class="session-room"><strong>Room:</strong> <%= smartypants(session.room) %></span><% } %>
                         </p>
                         <% } %>
+                        <% if (session.transcription) { %><p><strong><a href="#transcription">This session will be transcribed</a></strong><% } %>
                         <% if (session.description) { %><%= marked(session.description) %><% } %>
+                        <% if (session.transcription) { %>
+                        <p id="transcription"><strong>Live transcription will appear here for this session</strong></p>
+                        <iframe id="stFrame" src="http://www.streamtext.net/text.aspx?event=<%= session.transcription %>&chat=false&header=false&footer=false&bgc=ffffff&fgc=111111&ff=Open Sans&fs=16" style="width:100%; min-height: 300px;" frameborder="0" marginheight="0px" marginwidth="0px"></iframe>
+                        <% } %>
                     </div>
                 </article>
             </div>
