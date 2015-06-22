@@ -103,6 +103,7 @@
             <p>
                 <span class="session-time"><% if (showDay) { %><%= session.day %>, <% } %><%= session.time %></span>
                 <span class="session-room"><%= smartypants(session.room) %></span>
+                <% if (session.transcription) { %><span class="session-transcription"><i class="fa fa-cc"></i></span><% } %>
             </p>
         </a>
         </script>
@@ -114,6 +115,7 @@
             <p>
                 <span class="session-time"><% if (showDay) { %><%= session.day %>, <% } %><%= session.time %></span>
                 <span class="session-room"><%= smartypants(session.room) %></span>
+                <% if (session.transcription) { %><span class="session-transcription"><i class="fa fa-cc"></i></span><% } %>
             </p>
             <div class="hidden session-description"><% if (session.description) { %><%= marked(session.description.replace('http://','').replace('https://','')) %><% } %></div>
         </a>

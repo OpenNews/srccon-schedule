@@ -305,8 +305,9 @@ function Schedule(options) {
             schedule.loadSessions(schedule.showFullSessionList);
         } else {
             // handle standard tabs like "Thursday" or "Friday"
-            schedule.$container.removeClass();
-            schedule.$container.hide().empty().append(schedule.sessionListTemplate);
+            schedule.$container.removeClass().hide().empty();
+            schedule.addCaptionOverline();
+            schedule.$container.append(schedule.sessionListTemplate);
             schedule.loadSessions(schedule.addSessionsToSchedule);
             schedule.transitionElementIn(schedule.$container);
             
@@ -341,8 +342,16 @@ function Schedule(options) {
         schedule.transitionElementIn(schedule.$container);
     }
     
+    // provide some user instructions at top of page
+    schedule.addCaptionOverline = function() {
+        // provide some user instructions at top of page
+        schedule.$container.append('<p class="overline"><i class="fa fa-cc"></i> icon indicates sessions with live captions available to stream on your laptop or device</p>');
+    }
+    
     // adds search filter and expanded data toggle to top of "All" sessions list
     schedule.addListControls = function() {
+        schedule.addCaptionOverline();
+        
         var filterForm = '<div id="filter-form">\
                 <label for="list-filter">Search names, leaders and descriptions</label>\
                 <input class="filter" type="text" id="list-filter" />\
