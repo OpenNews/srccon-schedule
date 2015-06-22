@@ -429,6 +429,14 @@ header nav ul li a:hover {
     font-size: .83em;
     font-weight: 400;
 }
+.overline a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #ccc;
+}
+.overline a:hover {
+    border-color: inherit;
+}
 
 .session-time {
     margin-right: 1em;

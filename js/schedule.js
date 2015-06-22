@@ -345,7 +345,7 @@ function Schedule(options) {
     // provide some user instructions at top of page
     schedule.addCaptionOverline = function() {
         // provide some user instructions at top of page
-        schedule.$container.append('<p class="overline"><i class="fa fa-cc"></i> icon indicates sessions with live captions available to stream on your laptop or device</p>');
+        schedule.$container.append('<p class="overline"><i class="fa fa-cc"></i> icon indicates sessions with <a href="http://srccon.org/transcription/">live captions</a> available to stream on your laptop or device</p>');
     }
     
     // adds search filter and expanded data toggle to top of "All" sessions list
