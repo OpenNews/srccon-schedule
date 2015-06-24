@@ -195,7 +195,7 @@ function Schedule(options) {
             schedule.makeSchedule();
         }
     }
-
+    
     // utility function to clean up element that held session detail
     schedule.clearSessionDetail = function() {
         $('#session-detail-wrapper').remove();
