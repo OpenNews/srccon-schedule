@@ -13,8 +13,8 @@ function Schedule(options) {
         // TODO: determine list of unique tab names and dates
         // after loadSessions() gets actual session data
         schedule.tabList = [
-            { name: 'Thursday', tabDate: new Date(2014,6,24) },
-            { name: 'Friday', tabDate: new Date(2014,6,25) },
+            { name: 'Thursday', tabDate: new Date(2015,6,25) },
+            { name: 'Friday', tabDate: new Date(2015,6,26) },
             { name: 'All' }
         ];
         schedule.sessionList = [];
