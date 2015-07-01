@@ -154,7 +154,7 @@
                             <% if (session.room) { %><span class="session-room"><strong>Room:</strong> <%= smartypants(session.room) %></span><% } %>
                         </p>
                         <% } %>
-                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i></span> <strong><a href="http://www.streamtext.net/text.aspx?event=<%= session.transcription %>&chat=false&controls=false&footer=false&bgc=ffffff&fgc=111111&ff=Helvetica,Arial&fs=18">Streaming transcript will be available during this event</a></strong><% } %>
+                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i></span> <strong><!--<a href="http://www.streamtext.net/text.aspx?event=<%= session.transcription %>&chat=false&controls=false&footer=false&bgc=ffffff&fgc=111111&ff=Helvetica,Arial&fs=18">--><a href="https://github.com/OpenNews/srccon-data/blob/master/2015/transcripts/<%= session.transcription %>.txt">Archived transcript of this session</a></strong><% } %>
                         <% if (session.description) { %><%= marked(session.description) %><% } %>
                     </div>
                 </article>
