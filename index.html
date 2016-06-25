@@ -10,7 +10,7 @@
         <script>try{Typekit.load();}catch(e){}</script>
         <link rel="stylesheet" href="css/schedule.css">
         <link rel="shortcut icon" href="img/favicon.ico" />
-        <link rel="apple-touch-icon-precomposed" href="img/touch-icon-144x144.png" sizes="144x144" />
+        <link rel="apple-touch-icon-precomposed" type="image/png" href="img/touch-icon-144x144.png" sizes="144x144" />
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -24,24 +24,18 @@
     </head>
     <body>
         <header>
-            <div id="headertop">
-                <div class="header-container">
-                    <a href="/" id = "cornerlogo"><img src="http://www.srccon.org/media/img/2015/corner_logo.png"></a>
-
-                    <nav class="navigation">
-                        <ul>
-                            <li id="sessions"><a href="/">schedule</a></li>
-                            <li id="logistics"><a href="http://srccon.org/logistics">logistics</a></li>
-                            <li id="docs"><a href="http://srccon.org/docs">docs</a></li>
-                        </ul>
-                    </nav>
-                    <div id="headbox">
-                        <h2>Schedule</h2>
-                        <h3>Two days of peer-led conversations, hands-on workshops, and skillshares.</h3>
-                    </div>
+            <nav>
+                <div class="container">
+                    <a href="/" id="logo"><img src="http://www.srccon.org/media/img/2015/corner_logo.png"></a>
+                    <ul id="page-links">
+                        <li id="sessions"><a href="/">schedule</a></li>
+                        <li id="logistics"><a href="http://srccon.org/logistics">logistics</a></li>
+                        <li id="docs"><a href="http://srccon.org/docs">docs</a></li>
+                    </ul>
                 </div>
-            </div>
+            </nav>
         </header>
+        
         <div class="container">
             <div id="schedule-controls"></div>
             <article id="schedule"></article>
@@ -123,25 +117,6 @@
 
         <script type="text/template" id="session-detail-template">
         <div id="session-detail-wrapper">
-            <header>
-                <div id="headertop">
-                    <div class="header-container">
-                        <a href="/" id = "cornerlogo"><img src="http://www.srccon.org/media/img/2015/corner_logo.png"></a>
-
-                        <nav class="navigation">
-                            <ul>
-                                <li id="sessions"><a href="/">schedule</a></li>
-                                <li id="logistics"><a href="http://srccon.org/logistics">logistics</a></li>
-                                <li id="docs"><a href="http://srccon.org/docs">docs</a></li>
-                            </ul>
-                        </nav>
-                        <div id="headbox">
-                            <h2>Schedule</h2>
-                            <h3>Two days of peer-led conversations, hands-on workshops, and skillshares.</h3>
-                        </div>
-                    </div>
-                </div>
-            </header>
             <div class="container">
                 <article id="schedule">
                     <div id="session-detail-<%= session.id %>" class="session-detail" data-session="<%= session.id %>">
@@ -166,5 +141,20 @@
         <script src="js/underscore-min.js"></script>
         <script src="js/marked.min.js"></script>
         <script src="js/schedule.js"></script>
+        <script>
+            var config = {
+                mainHeaderText: "Iron Chef Training Conference",
+                subHeaderText: "June 21-22  · Hawaii",
+                pathToSessionsJson: 'sessions.json',
+                localStoragePrefix: 'srccon-2016',
+                tabList: [
+                    { name: 'Saturday', displayName: 'Sat', tabDate: new Date(2016,5,21) },
+                    { name: 'Sunday', displayName: 'Sun', tabDate: new Date(2016,5,22) },
+                    { name: 'All', displayName: '<i class="fa fa-search"></i>' }
+                ],
+            }
+            // instantiate the app
+            new Schedule(config);
+        </script>
     </body>
 </html>

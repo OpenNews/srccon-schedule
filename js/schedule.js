@@ -1,7 +1,7 @@
-function Schedule(options) {
+function Schedule(CONFIG) {
     var schedule = {};
     
-    schedule.init = function(options) {
+    schedule.init = function(CONFIG) {
         // TODO: make these configurable, passed in as options
         // when you create a Schedule() instance on the page
         schedule.sourceJSON = 'sessions.json';
@@ -169,6 +169,9 @@ function Schedule(options) {
         
         // add "fav" star controls to all session items on the page
         schedule.addStars('.session-list-item');
+
+        // enable to add toggles to each schedule block
+        // schedule.addBlockToggles();
     }
     
     // showSessionDetail() renders session data into the detail template,
@@ -243,6 +246,25 @@ function Schedule(options) {
         }
     }
     
+    // add icons for collapsible timeblocks
+    schedule.addBlockToggles = function() {
+        var blocks = schedule.$container.find('.page-block:visible');
+        blocks.prev('h3').addClass('slider-control').append('<i class="fa fa-chevron-circle-down"></i>');
+        blocks.addClass('slider');
+        schedule.calculateBlockHeights(blocks);
+        schedule.$container.find('.page-caption').append('<a href="#" id="slider-collapse-all" class="page-control" data-action="collapse">Hide all sessions</a>');
+    }
+
+    // calculate and store block heights for animations
+    schedule.calculateBlockHeights = function(blocks) {
+        var blocks = blocks || schedule.$container.find('.page-block');
+        _.each(blocks, function(b) {
+            var block = $(b);
+            var blockHeight = block.height()+'px';
+            block.attr('data-max-height', blockHeight).css('max-height', blockHeight);
+        });
+    }
+
     // add a set of tabs across the top of page as toggles that change display
     schedule.addToggles = function() {
         if (Modernizr.localstorage) {
@@ -345,7 +367,7 @@ function Schedule(options) {
     // provide some user instructions at top of page
     schedule.addCaptionOverline = function() {
         // provide some user instructions at top of page
-        schedule.$container.append('<p class="overline"><i class="fa fa-cc"></i> icon indicates sessions with <a href="http://srccon.org/transcription/">live captions</a> available to stream on your laptop or device</p>');
+        schedule.$container.append('<p class="overline"><i class="fa fa-cc"></i> indicates sessions with live transcription available</p>');
     }
     
     // adds search filter and expanded data toggle to top of "All" sessions list
@@ -408,7 +430,7 @@ function Schedule(options) {
     // showFavorites() handles display when someone chooses the "Favorites" tab
     schedule.showFavorites = function() {
         // provide some user instructions at top of page
-        schedule.$container.hide().empty().append('<p class="overline">Star sessions to store a list on this device</p>').append(schedule.sessionListTemplate);
+        schedule.$container.hide().empty().append('<p class="overline">Tap the star on a session to add it to your list here.</p>').append(schedule.sessionListTemplate);
         // use savedSessionList IDs to render favorited sessions to page
         schedule.addSessionsToSchedule(schedule.savedSessionList);
         schedule.transitionElementIn(schedule.$container);
@@ -474,6 +496,45 @@ function Schedule(options) {
                 clicked.html('<i class="fa fa-plus-circle"></i> Show descriptions').data('action', 'show');
             }
         });
+
+        // toggle individual schedule blocks on header tap
+        schedule.$container.on('click', '.slider-control', function(e) {
+            var clicked = $(this);
+            var targetBlock = clicked.next('.page-block');
+            schedule.animateBlockToggle(targetBlock);
+            clicked.find('.fa').toggleClass('fa-chevron-circle-left fa-chevron-circle-down')
+        });
+
+        // toggle all schedule blocks at once
+        schedule.$container.on('click', '#slider-collapse-all', function(e) {
+            e.preventDefault();
+            var clicked = $(this);
+            var action = clicked.data('action');
+            var targetBlocks = schedule.$container.find('.page-block');
+
+            _.each(targetBlocks, function(b) {
+                targetBlock = $(b);
+                schedule.animateBlockToggle(targetBlock);
+            });
+            schedule.$container.find('h3 .fa').toggleClass('fa-chevron-circle-left fa-chevron-circle-down');
+
+            if (action == 'collapse') {
+                clicked.html('Show all sessions').data('action', 'expand');
+            } else {
+                clicked.html('Hide all sessions').data('action', 'collapse');
+            }
+        });
+
+        // helper function for "toggle block" and "toggle all" controls
+        schedule.animateBlockToggle = function(targetBlock) {
+          targetBlock.toggleClass('closed');
+
+          if (targetBlock.hasClass('closed')) {
+            targetBlock.css('max-height', 0)
+          } else {
+            targetBlock.css('max-height', targetBlock.data('max-height'))
+          }
+        }
 
         // tap stars to favorite/unfavorite via localstorage
         schedule.$container.on('click', '.favorite', function(e) {
@@ -586,7 +647,7 @@ function Schedule(options) {
     );
 
     // fight me
-    schedule.init();
+    schedule.init(CONFIG);
 }
 
 // settings for marked library, to allow markdown formatting in session details
@@ -594,6 +655,3 @@ marked.setOptions({
     tables: false,
     smartypants: true
 });
-
-// instantiate the app
-new Schedule();

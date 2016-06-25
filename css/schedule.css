@@ -23,33 +23,48 @@
 }
 
 @font-face {
-  font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'),
+         url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),
+         url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'),
+         url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),
+         url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .fa {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fa-heart:before {
+    content: "\f004";
+}
+.fa-heart-o:before {
+    content: "\f08a";
 }
 .fa-star:before {
-  content: "\f005";
-}
-.fa-plus-circle:before {
-  content: "\f055";
+    content: "\f005";
+}.fa-plus-circle:before {
+    content: "\f055";
 }
 .fa-minus-circle:before {
-  content: "\f056";
+    content: "\f056";
 }
 .fa-cc:before {
-  content: "\f20a";
+    content: "\f20a";
+}
+.fa-chevron-circle-left:before {
+    content: "\f137";
+}
+.fa-chevron-circle-down:before {
+    content: "\f13a";
 }
 
 *, *:before, *:after {
@@ -58,9 +73,12 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 62.5%;
+}
 body {
     color: #111;
-    font-size: 18px;
+    font-size: 1.8rem;
     background-color: #fff;
     font-family: "ff-tisa-sans-web-pro", "Open Sans", sans-serif;
     margin: 0;
@@ -69,15 +87,91 @@ body {
     position: relative;
     background: #fff;
     max-width: 1140px;
-    margin: 2em auto;
-    padding-left: 10em;
-    padding-right: 1em;
+    margin: 2rem auto;
+    padding-left: 18rem;
+    padding-right: 2rem;
 }
 a {
     color: #184774;
 }
 
-/* 2015 PAGE HEADER */
+header .container {
+    display: block;
+    max-width: 1000px;
+    margin: 0px auto;
+    padding: 0px;
+    position: relative;
+}
+header a#logo img {
+    width: 120px;
+    position: absolute;
+    top: -10px;
+}
+nav {
+    background: Gainsboro;
+    padding: 1rem 0;
+    overflow: hidden;
+}
+#page-links {
+    display: inline-block;
+    float: right;
+    padding-left: 0px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#page-links li {
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 10px;
+    padding-bottom: 5px;
+}
+
+#page-links a {
+    display: inline-block;
+    margin-left: 2rem;
+    text-transform: uppercase;
+    color: #55565A;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#page-links a.active {
+    color: #CF455D;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+input {
+    font-size: 1.8rem;
+    padding: 5px;
+}
+
+header a {
+    white-space: nowrap;
+}
+
+.btn {
+    display: inline-block;
+    background: #CF455D;
+    padding: 5px 10px;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #CF455D;
+}
+
+/* 2015 PAGE HEADER 
 header {
     font-size: 16px;
     overflow-x: hidden;
@@ -107,23 +201,17 @@ header {
     position: relative;
 }
 
-header a#cornerlogo img {
-    width: 150px;
-    position: absolute;
-    top: 5px;
-}
-
 header nav {
     float: right;
     overflow: hidden;
-    font-size: 1.1em;
-    line-height: 1.7em;
+    font-size: 1.8rem;
+    line-height: 3rem;
 }
 
 header nav ul {
     padding-left: 0px;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 header nav ul li {
@@ -155,7 +243,7 @@ header nav ul li a:hover {
     position: relative;
     right: 1%;
     padding-top: 40px;
-    font-size: 1.1em;
+    font-size: 2rem;
     line-height: 1;
 }
 
@@ -166,8 +254,8 @@ header nav ul li a:hover {
 }
 
 #headbox h2 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
     margin-top: 0;
 }
 
@@ -178,15 +266,18 @@ header nav ul li a:hover {
 }
 /* END 2015 PAGE HEADER */
 
+#schedule {
+    margin: 5rem 0 10rem 0;
+}
 #schedule-controls {
     clear: both;
-    margin: 0 0 3em -6em;
+    margin: 0 0 5.5rem -11rem;
     font-family: "Open Sans", sans-serif;
 }
 
 #schedule-controls ul {
-    font-size: .83em;
-    margin: 2em auto;
+    font-size: 1.5rem;
+    margin: 3rem auto;
     padding: 0;
     list-style: none;
     width: 50%;
@@ -215,7 +306,7 @@ header nav ul li a:hover {
 #schedule-controls a {
     text-align: center;
     display: block;
-    padding: .33em 0 .5em;
+    padding: .83rem 0 1rem;
     color: LightSlateGray;
     background-color: WhiteSmoke;
     text-decoration: none;
@@ -229,25 +320,48 @@ header nav ul li a:hover {
 
 .schedule-tab,
 .page-block {
-    margin: 0 0 2em;
+    margin: 0 0 3.5rem;
 }
 
 .schedule-tab h3 {
+    position: relative;
     font-weight: 400;
     text-transform: uppercase;
     border-bottom: 1px solid Gainsboro;
-    margin: 1em 1em 1em 0;
+    margin: 2rem 2rem 2rem 0;
+    z-index: 1;
+    clear: both;
 }
 .schedule-tab h3 span {
     font-family: "Open Sans", sans-serif;
     background-color: #fff;
-    font-size: .67em;
-    margin-top: -.75em;
-    padding-right: 1em;
+    font-size: 1.5rem;
+    margin-top: -1.2rem;
+    padding-right: 2rem;
     float: left;
-    width: 12em;
-    margin-left: -12em;
+    width: 20rem;
+    margin-left: -20rem;
     text-align: right;
+}
+.slider {
+    overflow-y: hidden;
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.schedule-tab h3 .fa {
+    text-decoration: none;
+    float: right;
+    font-size: 2.5rem;
+    padding-left: .83rem;
+    background-color: #fff;
+    color: #C9CCCC;
+    position: absolute;
+    right: 0;
+    top: -1.2rem;
+}
+h3.slider-control {
+    cursor: pointer;
 }
 
 #session-detail-wrapper {
@@ -272,44 +386,48 @@ header nav ul li a:hover {
 }
 
 .session-list-item,
-.open-block {
+.open-block,
+.tag-list-item {
     display: block;
     clear: both;
     position: relative;
     cursor: pointer;
-    padding: 1em 2.5em 2.5em 1em;
-    margin: 0 2% 1em 0;
+    padding: 1.4rem 4.5rem 4.5rem 1.8rem;
+    margin: 0 2% 2rem 0;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
 }
 
-.session-list-item {
+.session-list-item,
+.tag-list-item {
     color: #111;
     text-decoration: none;
 }
 
-.session-list-item h4 {
-    margin: 0 0 .5em;
+.session-list-item h4,
+.category-list-item h4,
+.tag-list-item h4 {
+    margin: 0 0 .9rem;
     line-height: 1.5;
 }
 
 .session-list-item p {
-    font-size: .83em;
+    font-size: 1.5rem;
     margin: 0;
     position: absolute;
-    bottom: 1em;
+    bottom: 1.5rem;
 }
 
 .all-sessions .session-list-item {
-    padding: .5em 2.5em 1em 0;
+    padding: 1rem 4rem 1.5rem 0;
     background-color: #fff;
     border-bottom: 1px solid Gainsboro;
 }
 
 .all-sessions .session-list-item p {
     position: relative;
-    margin: 0 0 .67em;
+    margin: 0 0 1rem;
     bottom: auto;
 }
 
@@ -318,8 +436,8 @@ header nav ul li a:hover {
 }
 
 #show-descriptions {
-    font-size: .83em;
-    padding: 2em 0 0;
+    font-size: 1.5rem;
+    padding: 4.5rem 0 0;
     display: block;
     text-decoration: none;
     color: #111;
@@ -331,8 +449,8 @@ header nav ul li a:hover {
 }
 
 #filter-form {
-    font-size: .83em;
-    margin: 1em 0 2em;
+    font-size: 1.5rem;
+    margin: 1rem 0 3.5rem;
     padding: 0;
     width: 50%;
     float: left;
@@ -341,28 +459,26 @@ header nav ul li a:hover {
 #filter-form input {
     display: block;
     width: 100%;
-    font-size: 1em;
-    margin-top: .25em;
+    font-size: 1.5rem;
+    margin-top: .5rem;
 }
 #no-results {
-    font-size: .83em;
 }
 
 .session-description ul {
-    font-size: .83em;
 }
 
 .favorite {
     color: #fff;
-    font-size: 1.2em;
+    font-size: 2.3rem;
     position: absolute;
     cursor: pointer;
     top: 0;
     right: 0;
     line-height: 1;
-    width: 2.5em;
-    height: 2.5em;
-    padding: 0.7em 0 0 0.2em;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 1rem 0 0 0.4rem;
     text-align: center;
     text-shadow:
      -1px -1px 1px rgba(0, 0, 0, 0.1),
@@ -375,9 +491,9 @@ header nav ul li a:hover {
 .all-sessions .favorite {
     line-height: 1;
     background-color: #ffd0b6;
-    width: 1.8em;
-    height: 1.6em;
-    padding: 0.33em;
+    width: 3.3rem;
+    height: 3.2rem;
+    padding: .5rem;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -427,7 +543,6 @@ header nav ul li a:hover {
 .overline {
     clear: both;
     font-family: "Open Sans", sans-serif;
-    font-size: .83em;
     font-weight: 400;
 }
 .overline a {
@@ -448,7 +563,9 @@ header nav ul li a:hover {
 }
 
 #show-full-schedule {
-    font-size: .83em;
+    display: block;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
 }
 
 .hidden {
@@ -471,24 +588,52 @@ header nav ul li a:hover {
     *zoom: 1;
 }
 
+.loading span {
+    animation-name: pulse;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    font-size: 150%;
+}
+.loading span:nth-child(2) {
+    animation-delay: .2s;
+}
+.loading span:nth-child(3) {
+    animation-delay: .4s;
+}
+@keyframes pulse {
+    0% {
+        opacity: .2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: .2;
+    }
+}
+
 @media screen and (max-width: 1020px) {
     header {
         width: 100%;
     }
     .header-container  {
-        margin: 0 2em;
+        margin: 0 3.5rem;
+    }
+    #page-links {
+        padding-right: 3rem;
     }
 }
 
 @media only screen and (max-width: 940px) {
     #schedule-controls ul {
         float: none;
-        padding-right: 1.5em;
-        margin: 3em 0 0;
+        padding-right: 2.5rem;
+        margin: 4.5rem 0 0;
         width: 100%;
     }
     #schedule-controls a {
-        padding: .5em 0;
+        padding: 1rem 0;
     }
     header {
         background-size: cover;
@@ -515,7 +660,7 @@ header nav ul li a:hover {
     }
     .container {
         padding: 0;
-        margin: 2em 1em;
+        margin: 3.5rem 2rem;
     }
     .schedule-tab h3,
     .session-list-item {
@@ -526,90 +671,70 @@ header nav ul li a:hover {
     }
     #schedule-controls {
         width: 100%;
-        margin: 0 0 3em 0;
+        margin: 0 0 5.5rem 0;
     }
     #schedule-controls ul {
         padding-right: 0;
     }
     #filter-form {
         width: 100%;
-        margin-bottom: 1em;
+        margin-bottom: 2rem;
     }
     #show-descriptions {
         display: inline-block;
         padding: 0;
-        margin: 0 0 2em 0;
+        margin: 0 0 3.5rem 0;
     }
     #headbox {
         right: auto;
         width: 100%;
-        margin: 1em;
-        font-size: 1em;
+        margin: 2rem;
+        font-size: 2rem;
     }
 }
 
 @media only screen and (max-width: 640px) {
     header {
-        height: 180px;
+        height: 80px;
         margin-bottom: 30px;
     }
-    #headbox {
-        padding-top: 50px;
-    }
-    #headbox h3 {
-        display: none;
+    #page-links a {
+        margin-left: 1rem;
     }
 }
 
 @media only screen and (max-width: 540px) {
-    header h1 {
-        font-size: 2em;
-    }
-    header h1 img {
-        display: block;
-        height: 2.5em;
-        margin: 0 auto .5em;
-    }
-    header p {
-        font-size: .75em;
-    }
     .session-detail .session-room {
         display: block;
-        margin-top: 1em;
+        margin-top: 2rem;
     }
 }
 
 @media only screen and (max-width: 480px) {
+    #schedule-controls ul {
+        margin: 3.5rem 0 0;
+    }
     header {
-        height: 150px;
+        height: 60px;
     }
     header nav {
-        font-size: .9em;
+        font-size: 1.2rem;
     }
     header nav ul {
-        margin-top: .33em;
+        margin-top: 1rem;
     }
-    header a#cornerlogo img {
-        width: 100px;
-        top: 10px;
-        left: -25px;
+    header a#logo img {
+        width: 80px;
+        top: -5px;
+        left: 5px;
     }
-    #headertop {
-        height: 40px;
-    }
-    #headbox {
-        margin: 1em 0;
+    #page-links a {
+        margin-left: .5rem;
     }
 }
 
 @media only screen and (max-width: 420px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-    header h1 img {
-        height: 2em;
-    }
-    #schedule-controls {
-        font-size: .75em;
+    #schedule-controls ul {
+        font-size: 1rem;
     }
 }
