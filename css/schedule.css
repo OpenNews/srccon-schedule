@@ -494,21 +494,31 @@ h3.slider-control {
 .session-detail .favorite,
 .all-sessions .favorite {
     line-height: 1;
-    background-color: #ffd0b6;
+    /*background-color: #ffd0b6;*/
     width: 3.3rem;
     height: 3.2rem;
     padding: .5rem;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
+    text-shadow:
+     -1px -1px 1px rgba(0, 0, 0, 0.33),
+      1px -1px 1px rgba(0, 0, 0, 0.33),
+      -1px 1px 1px rgba(0, 0, 0, 0.33),
+       1px 1px 1px rgba(0, 0, 0, 0.33);
 }
 
 .favorite-active {
     color: #fc6e1f;
 }
 
-.session-detail .favorite-active {
-    background-color: #fff;
+.session-detail .favorite-active,
+.all-sessions .favorite-active {
+    text-shadow:
+     -1px -1px 1px rgba(0, 0, 0, 0.1),
+      1px -1px 1px rgba(0, 0, 0, 0.1),
+      -1px 1px 1px rgba(0, 0, 0, 0.1),
+       1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .session-length-short {
