@@ -51,7 +51,8 @@
 }
 .fa-star:before {
     content: "\f005";
-}.fa-plus-circle:before {
+}
+.fa-plus-circle:before {
     content: "\f055";
 }
 .fa-minus-circle:before {
@@ -59,6 +60,9 @@
 }
 .fa-cc:before {
     content: "\f20a";
+}
+.fa-file-text-o:before {
+    content: "\f0f6";
 }
 .fa-chevron-circle-left:before {
     content: "\f137";

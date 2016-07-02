@@ -139,7 +139,8 @@ function Schedule(CONFIG) {
         openBlocks.remove();
     }
 
-    // insert schedule block container into DOM
+    // use this to manage timeblocks in separate data sheet
+    // and dynamically insert schedule block container into DOM
     schedule.makeTimeblockList = function(timeblocks) {
         _.each(timeblocks, function(timeblock, i) {
             // TODO: can probably use template for this
