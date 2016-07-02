@@ -93,7 +93,7 @@
         <script type="text/template" id="session-card-template">
         <a href="#_session-<%= sessionID %>" id="session-<%= sessionID %>" class="session-list-item session-<%= sessionClass %>" data-session="<%= sessionID.replace('-ghost','') %>">
             <h4><%= smartypants(session.title) %></h3>
-            <% if (showFacilitators) { %><p class="session-leaders"><%= smartypants(session.leader) %></p><% } %>
+            <% if (showFacilitators) { %><p class="session-facilitators"><%= smartypants(session.facilitators) %></p><% } %>
             <p>
                 <span class="session-time"><% if (showDay) { %><%= session.day %>, <% } %><%= session.time %></span>
                 <span class="session-room"><%= smartypants(session.room) %></span>
@@ -105,9 +105,9 @@
         <script type="text/template" id="session-list-item-template">
         <a href="#_session-<%= sessionID %>" id="session-<%= sessionID %>" class="session-list-item" data-session="<%= sessionID.replace('-ghost','') %>">
             <h4><%= smartypants(session.title) %></h3>
-            <% if (showFacilitators) { %><p class="session-leaders"><%= smartypants(session.leader) %></p><% } %>
+            <% if (showFacilitators) { %><p class="session-facilitators"><%= smartypants(session.facilitators) %></p><% } %>
             <p>
-                <span class="session-time"><% if (showDay) { %><%= session.day %>, <% } %><%= session.time %></span>
+                <span class="session-time"><% if (showDay && session.day) { %><%= session.day %>, <% } %><%= session.time %></span>
                 <span class="session-room"><%= smartypants(session.room) %></span>
                 <% if (session.transcription) { %><span class="session-transcription"><i class="fa fa-cc"></i></span><% } %>
             </p>
@@ -122,7 +122,7 @@
                     <div id="session-detail-<%= session.id %>" class="session-detail" data-session="<%= session.id %>">
                         <a id="show-full-schedule" href="/">&larr; Back to full schedule</a>
                         <h2><%= smartypants(session.title) %></h2>
-                        <% if (session.leader) { %><p class="session-leaders"><strong>Session leader(s):</strong> <%= smartypants(session.leader) %></p><% } %>
+                        <% if (session.facilitators) { %><p class="session-facilitators"><strong>Session facilitator(s):</strong> <%= smartypants(session.facilitators) %></p><% } %>
                         <% if (session.day || session.time || session.room) { %>
                         <p>
                             <span class="session-time"><strong>Day & Time:</strong> <% if (session.day) { %><%= session.day %>, <% } %><%= session.time %></span>

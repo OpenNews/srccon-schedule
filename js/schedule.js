@@ -448,7 +448,7 @@ function Schedule(CONFIG) {
         fullList = _.sortBy(fullList, function(i) {
             return i.title;
         });
-        
+
         // render the list
         _.each(fullList, function(v, k) {
             var templateData = schedule.makeSessionItemTemplateData(v, true);
@@ -491,10 +491,10 @@ function Schedule(CONFIG) {
             var filterVal = $(this).val();
             if (filterVal) {
                 // compare current value of search input across session data,
-                // matching against titles, session leader names, descriptions
+                // matching against titles, session facilitator names, descriptions
                 var filteredSessions = _.filter(schedule.sessionList, function(v, k) {
                     return (v.title.toUpperCase().indexOf(filterVal.toUpperCase()) >= 0)
-                           || (v.leader.toUpperCase().indexOf(filterVal.toUpperCase()) >= 0)
+                           || (v.facilitators.toUpperCase().indexOf(filterVal.toUpperCase()) >= 0)
                            || (v.description.toUpperCase().indexOf(filterVal.toUpperCase()) >= 0);
                 });
                 // get the IDs of the matching sessions ...
