@@ -129,7 +129,7 @@
                             <% if (session.room) { %><span class="session-room"><strong>Room:</strong> <%= smartypants(session.room) %></span><% } %>
                         </p>
                         <% } %>
-                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i></span> <strong><!--<a href="http://www.streamtext.net/text.aspx?event=<%= session.transcription %>&chat=false&controls=false&footer=false&bgc=ffffff&fgc=111111&ff=Helvetica,Arial&fs=18">--><a href="http://srccon.org/docs/transcripts/<%= session.transcription.replace('SRCCON2015','').toLowerCase() %>">Archived transcript of this session</a></strong><% } %>
+                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i></span> <strong><!--<a href="http://aloft.nu/srccon/2016-<%= session.id %>--><a href="http://2015.srccon.org/docs/transcripts/<%= session.transcription.replace('SRCCON2015','').toLowerCase() %>">Archived transcript of this session</a></strong><% } %>
                         <% if (session.description) { %><%= marked(session.description) %><% } %>
                     </div>
                 </article>
