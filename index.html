@@ -106,11 +106,13 @@
         <a href="#_session-<%= sessionID %>" id="session-<%= sessionID %>" class="session-list-item" data-session="<%= sessionID.replace('-ghost','') %>">
             <h4><%= smartypants(session.title) %></h3>
             <% if (showFacilitators) { %><p class="session-facilitators"><%= smartypants(session.facilitators) %></p><% } %>
+            <% if (session.day || session.time || session.room) { %>
             <p>
                 <span class="session-time"><% if (showDay && session.day) { %><%= session.day %>, <% } %><%= session.time %></span>
                 <span class="session-room"><%= smartypants(session.room) %></span>
                 <% if (session.transcription) { %><span class="session-transcription"><i class="fa fa-cc"></i></span><% } %>
             </p>
+            <% } %>
             <div class="hidden session-description"><% if (session.description) { %><%= marked(session.description.replace('http://','').replace('https://','')) %><% } %></div>
         </a>
         </script>
@@ -129,7 +131,7 @@
                             <% if (session.room) { %><span class="session-room"><strong>Room:</strong> <%= smartypants(session.room) %></span><% } %>
                         </p>
                         <% } %>
-                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i> <strong><!--<a href="http://aloft.nu/srccon/2016-<%= session.id %>--><a href="http://2015.srccon.org/docs/transcripts/<%= session.transcription.replace('SRCCON2015','').toLowerCase() %>">Archived transcript of this session</a></strong><% } %>
+                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i> <strong><a href="http://aloft.nu/srccon/2016-<%= session.id %>">Live transcript of this session</a></strong><% } %>
                         <% if (session.notepad) { %><p><i class="fa fa-file-text-o"></i> <strong><a href="https://public.etherpad-mozilla.org/p/SRCCON2016-<%= session.id %>">Session notes & resources</a></strong><% } %>
                         <% if (session.description) { %><%= marked(session.description) %><% } %>
                     </div>
