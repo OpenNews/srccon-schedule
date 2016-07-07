@@ -223,7 +223,8 @@ function Schedule(CONFIG) {
             var templateData = {
                 session: session,
                 //slugify: schedule.slugify, // context function for string-matching
-                smartypants: schedule.smartypants // context function for nice typography
+                smartypants: schedule.smartypants, // context function for nice typography
+                embedTweet: schedule.embedTweet // context function to render tweets
             }
 
             // turn facilitator_array into array of individual facilitator objects
@@ -696,6 +697,28 @@ function Schedule(CONFIG) {
         ga('send', 'event', 'Schedule App', action, label);
     }
 
+    // utility function to render embedded tweets from tweet URLs
+    schedule.embedTweet = function(url) {
+        var tweetID = url.split("/").pop();
+        if (window.twttr) {
+            var twttr = window.twttr;
+            twttr.ready(
+                function (twttr) {
+                    twttr.widgets.createTweet(
+                        tweetID,
+                        document.getElementById("tweet-container"),
+                        {conversation: "none"}
+                    );
+                    twttr.widgets.load(
+                        document.getElementById("tweet-container")
+                    );
+                }
+            );
+        } else {
+            // not sure we want to display anything if embed code fails
+        }
+    }
+    
     // utility function to pass into templates for nice typography
     schedule.smartypants = function(str) {
         return str

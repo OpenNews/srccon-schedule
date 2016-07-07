@@ -47,45 +47,45 @@
             <h3><span>Thursday 9 AM</span></h3>
             <div id="thursday-morning" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 11 AM</span></h3>
+            <h3><span>Thursday 10:30 AM</span></h3>
             <div id="thursday-am-1" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 12:30 PM</span></h3>
+            <h3><span>Thursday 12 PM</span></h3>
             <div id="thursday-am-2" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 1:30 PM</span></h3>
+            <h3><span>Thursday 1 PM</span></h3>
             <div id="thursday-lunch" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 3 PM</span></h3>
+            <h3><span>Thursday 2:30 PM</span></h3>
             <div id="thursday-pm-1" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 4:30 PM</span></h3>
+            <h3><span>Thursday 3 PM</span></h3>
             <div id="thursday-pm-2" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 5:30 PM</span></h3>
+            <h3><span>Thursday 5:15 PM</span></h3>
             <div id="thursday-evening" class="page-block"><div class="open-block">OPEN</div></div>
         </div>
         
         <div id="friday" class="schedule-tab">
-            <h3><span>Friday 10 AM</span></h3>
+            <h3><span>Friday 9:30 AM</span></h3>
             <div id="friday-morning" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Friday 11 AM</span></h3>
+            <h3><span>Friday 10:30 AM</span></h3>
             <div id="friday-am-1" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Friday 12:30 PM</span></h3>
+            <h3><span>Friday 12 PM</span></h3>
             <div id="friday-am-2" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Friday 1:30 PM</span></h3>
+            <h3><span>Friday 1 PM</span></h3>
             <div id="friday-lunch" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Friday 3 PM</span></h3>
+            <h3><span>Friday 2:30 PM</span></h3>
             <div id="friday-pm-1" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Friday 4:30 PM</span></h3>
+            <h3><span>Friday 3 PM</span></h3>
             <div id="friday-pm-2" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Friday 5:30 PM</span></h3>
+            <h3><span>Friday 5:15 PM</span></h3>
             <div id="friday-evening" class="page-block"><div class="open-block">OPEN</div></div>
         </div>
         </script>
@@ -134,6 +134,13 @@
                         <% if (session.transcription) { %><p><i class="fa fa-cc"></i> <strong><a href="http://aloft.nu/srccon/2016-<%= session.id %>">Live transcript of this session</a></strong><% } %>
                         <% if (session.notepad) { %><p><i class="fa fa-file-text-o"></i> <strong><a href="https://public.etherpad-mozilla.org/p/SRCCON2016-<%= session.id %>">Session notes & resources</a></strong><% } %>
                         <% if (session.description) { %><%= marked(session.description) %><% } %>
+
+                        <% if (session.twitter) { %>
+                            <div id="tweet-container"></div>
+                            <% _.each(session.twitter, function(tweet) { %>
+                                <%= embedTweet(tweet) %>
+                            <% }); %>
+                        <% } %>
                     </div>
                 </article>
             </div>
@@ -144,17 +151,31 @@
         <script src="js/underscore-min.js"></script>
         <script src="js/marked.min.js"></script>
         <script src="js/schedule.js"></script>
+        <script>window.twttr = (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+          if (d.getElementById(id)) return t;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+ 
+          t._e = [];
+          t.ready = function(f) {
+            t._e.push(f);
+          };
+ 
+          return t;
+        }(document, "script", "twitter-wjs"));</script>
         <script>
             var config = {
-                mainHeaderText: "Iron Chef Training Conference",
-                subHeaderText: "June 21-22  · Hawaii",
                 pathToSessionsJson: 'sessions.json',
                 localStoragePrefix: 'srccon-2016',
                 tabList: [
                     { name: 'Thursday', displayName: 'Thu', tabDate: new Date(2016,5,25) },
                     { name: 'Friday', displayName: 'Fri', tabDate: new Date(2016,5,26) },
                     { name: 'All', displayName: '<i class="fa fa-search"></i>' }
-                ],
+                ]
             }
             // instantiate the app
             new Schedule(config);
