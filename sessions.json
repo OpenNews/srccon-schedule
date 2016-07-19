@@ -71,7 +71,7 @@
         "room": "", 
         "time": "6:30-9:30pm", 
         "timeblock": "thursday-evening", 
-        "title": "Evening sessions", 
+        "title": "SRCCON at night", 
         "transcription": ""
     }, 
     {
@@ -326,7 +326,7 @@
         "room": "Innovation Studio", 
         "time": "1:30-2:15pm", 
         "timeblock": "thursday-lunch", 
-        "title": "Where Are the Midsize Metro News Developers", 
+        "title": "Lunch conversation: Where Are the Midsize Metro News Developers", 
         "transcription": ""
     }, 
     {
@@ -341,7 +341,7 @@
         "room": "Classroom 310", 
         "time": "1:30-2:15pm", 
         "timeblock": "thursday-lunch", 
-        "title": "Covering police shootings (and other events) when the data is terrible", 
+        "title": "Lunch conversation: Covering police shootings (and other events) when the data is terrible", 
         "transcription": ""
     }, 
     {
@@ -356,7 +356,7 @@
         "room": "Boardroom", 
         "time": "1:30-2:15pm", 
         "timeblock": "thursday-lunch", 
-        "title": "Funding Open Source Infrastructure", 
+        "title": "Lunch conversation: Funding Open Source Infrastructure", 
         "transcription": ""
     }, 
     {
@@ -776,7 +776,7 @@
         "room": "Classroom 310", 
         "time": "1:30-2:15pm", 
         "timeblock": "friday-lunch", 
-        "title": "Professional development in the digital age: How to get started, how to keep going", 
+        "title": "Lunch conversation: Professional development in the digital age: How to get started, how to keep going", 
         "transcription": ""
     }, 
     {
@@ -791,7 +791,7 @@
         "room": "", 
         "time": "1:30-2:15pm", 
         "timeblock": "friday-lunch", 
-        "title": "Lunch conversations - sign up at SRCCON", 
+        "title": "Add your own lunch conversation - sign up at SRCCON", 
         "transcription": ""
     }, 
     {
