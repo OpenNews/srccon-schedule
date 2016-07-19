@@ -161,6 +161,11 @@ header a {
     white-space: nowrap;
 }
 
+p.meta {
+    text-align: center;
+    margin: 0 0 2.5rem -11rem;
+}
+
 .btn {
     display: inline-block;
     background: #CF455D;
@@ -683,6 +688,10 @@ h3.slider-control {
     header {
         margin-left: 0;
     }
+    p.meta {
+        width: 100%;
+        margin: 0 0 2.5rem 0;
+    }
     #schedule-controls {
         width: 100%;
         margin: 0 0 5.5rem 0;
@@ -722,6 +731,9 @@ h3.slider-control {
         display: block;
         margin-top: 2rem;
     }
+    p.meta {
+        font-size: 1.5rem;
+    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -744,6 +756,9 @@ h3.slider-control {
     }
     #page-links a {
         margin-left: .5rem;
+    }
+    p.meta {
+        font-size: 1.3rem;
     }
 }
 
