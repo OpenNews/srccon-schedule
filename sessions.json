@@ -27,7 +27,7 @@
         "time": "9:45am", 
         "timeblock": "thursday-morning", 
         "title": "Welcome to SRCCON", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -117,7 +117,7 @@
         "time": "5:15pm", 
         "timeblock": "friday-evening", 
         "title": "Closing", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -147,7 +147,7 @@
         "time": "10:30-11:30am", 
         "timeblock": "thursday-am-1", 
         "title": "Threat Modeling for Code: When is Bad Code the Better Solution?", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -162,7 +162,7 @@
         "time": "10:30-11:30am", 
         "timeblock": "thursday-am-1", 
         "title": "You're The Reason My Name Is On Google: The Ethics Of Publishing Public Data", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -200,14 +200,14 @@
         "everyone": "", 
         "facilitators": "Bo Peng", 
         "facilitators_twitter": "bo_p", 
-        "id": "technical-ideas-without-dumbdown", 
+        "id": "technical-ideas", 
         "length": "1 hour", 
         "notepad": "y", 
         "room": "Boardroom", 
         "time": "10:30-11:30am", 
         "timeblock": "thursday-am-1", 
         "title": "How do we convey technical ideas without dumbing things down?", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -237,7 +237,7 @@
         "time": "12-1pm", 
         "timeblock": "thursday-am-2", 
         "title": "Building news apps for humanity", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -252,7 +252,7 @@
         "time": "12-1pm", 
         "timeblock": "thursday-am-2", 
         "title": "Skipping the blame game and working across teams to fix newsroom Ad Tech", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -297,7 +297,7 @@
         "time": "12-1pm", 
         "timeblock": "thursday-am-2", 
         "title": "How can we peer review our data stories?", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -387,7 +387,7 @@
         "time": "2:30-3:30pm", 
         "timeblock": "thursday-pm-1", 
         "title": "Designing Participatory Algorithmic Decision-Making Processes", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -402,7 +402,7 @@
         "time": "2:30-3:30pm", 
         "timeblock": "thursday-pm-1", 
         "title": "The good and bad of newsroom on-boarding processes (and how can we make them better)", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -417,7 +417,7 @@
         "time": "2:30-3:30pm", 
         "timeblock": "thursday-pm-1", 
         "title": "The Ecology of Newsroom Software", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -492,7 +492,7 @@
         "time": "4-5pm", 
         "timeblock": "thursday-pm-2", 
         "title": "Hungry for audience insights? Let’s make a DIY user research toolkit for newsrooms!", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -507,7 +507,7 @@
         "time": "4-5pm", 
         "timeblock": "thursday-pm-2", 
         "title": "Accessibility in media", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -522,7 +522,7 @@
         "time": "4-5pm", 
         "timeblock": "thursday-pm-2", 
         "title": "Tools to search millions of documents remotely and across borders", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Thursday", 
@@ -582,7 +582,7 @@
         "time": "10:30-11:30am", 
         "timeblock": "friday-am-1", 
         "title": "Why your bot is nothing without a human", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -597,7 +597,7 @@
         "time": "10:30-11:30am", 
         "timeblock": "friday-am-1", 
         "title": "Break Down that Wall: Why Editorial and Audience Development Need to Work Together", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -642,7 +642,7 @@
         "time": "10:30-11:30am", 
         "timeblock": "friday-am-1", 
         "title": "‘Insert Caption Here’: how Facebook made video captioning cool", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -687,7 +687,7 @@
         "time": "12-1pm", 
         "timeblock": "friday-am-2", 
         "title": "Every day I'm juggling: Managing managers, peer expectations, and your own project ideas", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -702,7 +702,7 @@
         "time": "12-1pm", 
         "timeblock": "friday-am-2", 
         "title": "Where does photojournalism fit in the future of news?", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -747,7 +747,7 @@
         "time": "12-1pm", 
         "timeblock": "friday-am-2", 
         "title": "Keeping people at the forefront of data stories", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -822,7 +822,7 @@
         "time": "2:30-3:30pm", 
         "timeblock": "friday-pm-1", 
         "title": "Through an iPhone Darkly: Media and Networks through the lens of Science Fiction", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -837,7 +837,7 @@
         "time": "2:30-3:30pm", 
         "timeblock": "friday-pm-1", 
         "title": "Better Analytics: Why You Have to Define Success Before You Use Analytics — And How To Do It", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -882,7 +882,7 @@
         "time": "2:30-3:30pm", 
         "timeblock": "friday-pm-1", 
         "title": "Give and Receive: Can we strengthen our community through remote mentorship and office hours?", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -927,7 +927,7 @@
         "time": "4-5pm", 
         "timeblock": "friday-pm-2", 
         "title": "How can teams build a consistent culture of documentation?", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -942,7 +942,7 @@
         "time": "4-5pm", 
         "timeblock": "friday-pm-2", 
         "title": "Running undergraduate internships that produce great newsroom developers", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
@@ -972,7 +972,7 @@
         "time": "4-5pm", 
         "timeblock": "friday-pm-2", 
         "title": "Get you a CMS that can do both: Platforms, the web, and storytelling imperatives", 
-        "transcription": ""
+        "transcription": "y"
     }, 
     {
         "day": "Friday", 
