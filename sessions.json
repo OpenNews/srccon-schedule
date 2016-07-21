@@ -436,7 +436,7 @@
     }, 
     {
         "day": "Thursday", 
-        "description": "Let's take a walk through the existing ecosystem of The Coral Project - by installing it on your own machine. We'll share how it's built, supply dummy data so you can play with it immediately, and discuss how to approach big problems with ambitious open-source software.", 
+        "description": "The Coral Project is a Mozilla collaboration with The New York Times and The Washington Post. We're building open-source tools and practices to make better communities around journalism. Let's take a walk through our ecosystem - by installing it on your own machine. We'll share how it's built, supply dummy data for you to play with, and discuss how to approach big problems with open-source collaboration.", 
         "everyone": "", 
         "facilitators": "Gabriela Rodriguez Beron, David Erwin", 
         "facilitators_twitter": "gaba,daviderwin", 
@@ -511,7 +511,7 @@
     }, 
     {
         "day": "Thursday", 
-        "description": "Getting hundreds of reporters from different newsrooms in different countries to work together on the same project -and share- is the International Consortium of Investigative Journalists’ (ICIJ) day-to-day challenge. For our latest investigation, the Panama Papers, we gathered more than 370 journalists from almost 80 countries to mine 11.5 million files. One of the missions of ICIJ's Data & Research Unit is to create the tools to make these collaborations happen seamlessly across borders. We've implemented social network platforms for reporters to communicate the findings, developed platforms to search over millions of documents and data and also to explore them visually. With reporters collaborating more and more across borders - or with different organizations - our challenge today could be yours tomorrow. Learn from our successes (and mistakes). We want to share with you our experience in deploying Apache Solr (http://lucene.apache.org/solr/) to search unstructured data with added metadata, using Neo4J and Linkurious for graph databases (https://linkurio.us/) and implementing the social network Oxwall (http://www.oxwall.org/) to communicate efficiently.", 
+        "description": "Getting hundreds of reporters from different newsrooms in different countries to work together on the same project--and share--is the International Consortium of Investigative Journalists’ (ICIJ) day-to-day challenge. For our latest investigation, the Panama Papers, we gathered more than 370 journalists from almost 80 countries to mine 11.5 million files. One of the missions of ICIJ's Data & Research Unit is to create the tools to make these collaborations happen seamlessly across borders. We've implemented social network platforms for reporters to communicate the findings, developed platforms to search over millions of documents and data and also to explore them visually. With reporters collaborating more and more across borders - or with different organizations - our challenge today could be yours tomorrow. Learn from our successes (and mistakes). \n\nWe want to share with you our experience in:\n\n* indexing and searching in documents ([Apache Solr](http://lucene.apache.org/solr/) and [Blacklight](https://github.com/projectblacklight/blacklight),\n* how to play with our structured data with the graph database [Neo4j](https://offshoreleaks.icij.org/pages/database),\n* and efficient and secure ways and tools to communicate with hundreds of journalists worldwide.\n", 
         "everyone": "", 
         "facilitators": "Miguel Fiandor", 
         "facilitators_twitter": "mfiandor", 
@@ -931,7 +931,7 @@
     }, 
     {
         "day": "Friday", 
-        "description": "One of the things I love about our undergraduate internship for newsroom developers is that every year we can't quite believe we'll cope without them when they go back to finish their degree, but somehow every year we get another cohort that are just as amazing. Another thing I love is that when they complete their degrees a year later, we're number one on their list of prospective employers. And another thing is that, eight years into the program, seven out of the eleven interns who've graduated are now full time developers at the BBC. Four of them are seniors. So, maybe you'd like to share your experiences of running internships and we can compare notes.", 
+        "description": "The BBC have been lucky enough to get a great undergraduate trainee programme up and running over the last 8 years. It's a really good way to get enthusiastic talented graduates into the organisation. But internships aren't without their issues. Andrew Leimdorfer (BBC) and Annie Daniel (Texas Tribune) will facilitate a conversation about people's experiences running internships and what it's like to be an intern. It's going to be conversation, so come along prepared to share stories, offer your own advice and ask questions.", 
         "everyone": "", 
         "facilitators": "Andrew Leimdorfer, Annie Daniel", 
         "facilitators_twitter": "leimdorfer,anieldaniel", 
