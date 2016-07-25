@@ -841,7 +841,7 @@
     }, 
     {
         "day": "Friday", 
-        "description": "As technology and our capacity grows, data projects become more and more ambitious. We scrape millions of rows and present readers a whole universe of information with one news app or interactive page. But is it always the more the merrier? Should we sometimes give up the desire to “show them all”? When we throw loads of information at readers, do they all have the ability to sift through it and find the “nut graph” of the story? Or is nut graph even a necessary part of news these days with all the big data available to explore? “Less is more” has always been the rule of thumb for news writing, maybe it’s time to apply it to data reporting as well. In this session, we’ll discuss these questions through the “5W1H” approach. We’ll look at some successful and not so successful examples, share ideas on how to effectively deliver data to readers and when to let it go. You will leave the session with a general guideline when designing a big data project in the future.\n", 
+        "description": "As technology and our capacity grows, data projects become more and more ambitious. We scrape millions of rows and present readers a whole universe of information with one news app or interactive page. When we throw loads of information at readers, do they all have the ability to sift through it and find the \"nut graf\" of the story? Or is nut graf even a necessary part of news these days with all the big data available to explore? \"Less is more\" has always been the rule of thumb for news writing, maybe it's time to apply it to data reporting as well? The goal of this session is to produce a short written guide to making decisions about how we use data. Breaking into small groups, we'll look at some successful and not so successful examples, share ideas on how to effectively deliver data to readers and when to let it go. In the end, we'll try to identify and articulate the circumstances under which various approaches work.", 
         "everyone": "", 
         "facilitators": "Evie Liu, Steve Suo", 
         "facilitators_twitter": "Evie_xing,stevesuo", 
@@ -851,7 +851,7 @@
         "room": "Classroom 310", 
         "time": "2:30-3:30pm", 
         "timeblock": "friday-pm-1", 
-        "title": "When is big data too big? When is less more?", 
+        "title": "When is big data too big? A Guide to Good Data Use", 
         "transcription": ""
     }, 
     {
