@@ -781,6 +781,21 @@
     }, 
     {
         "day": "Friday", 
+        "description": "\"Beating the CMS blues: Designing the next generation of publishing tools\" was a two-day event at the MIT Media Lab, held in July 2016, focused on taking a human-centered approach to designing the next generation of tools to create, publish, and share news content. It was attended by a small group of smart coders, newsroom leaders and technologists, and some snippets from that first conversation include:\n \n* It's not a technology problem, it's culture, it's people!\n* Building a CMS that facilitates and prioritizes collaboration\n* Content distribution to different platforms.\n* Breaking news vs. content with long shelf life\n* CMS as a broader design challenge – not just about the tech in newsrooms\n* CMS for new storytelling formats, UGC, monetization, membership\n* Sharing knowledge and collaboration around solving CMS problems\n\nLet's keep the conversation going and craft the challenges into experiments and solutions.", 
+        "everyone": "", 
+        "facilitators": "Shazna Nessa", 
+        "facilitators_twitter": "", 
+        "id": "beating-cms-blues", 
+        "length": "1 hour", 
+        "notepad": "y", 
+        "room": "Classroom 314", 
+        "time": "1:30-2:15pm", 
+        "timeblock": "friday-lunch", 
+        "title": "Beating the CMS blues: Help Knight Foundation support newsrooms with a new generation of publishing tools", 
+        "transcription": ""
+    }, 
+    {
+        "day": "Friday", 
         "description": "We set aside rooms during lunchtime for people to lead conversational sessions over meals. You'll find a signup grid in the Commons area, so if a topic emerges while you're at SRCCON that you'd like to discuss, sign up!", 
         "everyone": "", 
         "facilitators": "", 
