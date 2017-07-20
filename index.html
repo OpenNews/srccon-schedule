@@ -132,8 +132,8 @@
                             <% if (session.room) { %><span class="session-room"><strong>Room:</strong> <%= smartypants(session.room) %></span><% } %>
                         </p>
                         <% } %>
-                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i> <strong><a href="http://srccon.aloft.nu/2016-<%= session.id %>">Live transcript of this session</a></strong><% } %>
-                        <% if (session.notepad) { %><p><i class="fa fa-file-text-o"></i> <strong><a href="https://public.etherpad-mozilla.org/p/SRCCON2016-<%= session.id %>">Session notes & resources</a></strong><% } %>
+                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i> <strong><a href="http://srccon.aloft.nu/2017-<%= session.id %>">Live transcript of this session</a></strong><% } %>
+                        <% if (session.notepad) { %><p><i class="fa fa-file-text-o"></i> <strong><a href="https://etherpad.opennews.org/p/SRCCON2017-<%= session.id %>">Session notes & resources</a></strong><% } %>
                         <% if (session.description) { %><%= marked(session.description) %><% } %>
 
                         <% if (session.twitter) { %>
