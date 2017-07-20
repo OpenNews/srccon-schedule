@@ -115,7 +115,7 @@ function Schedule(CONFIG) {
     schedule.sortSessionGroups = function(data) {
         schedule.sessionList = _.sortBy(data, function(i) {
             // simple way to divide sessions into groups by length
-            return i.length != '1 hour';
+            return i.length != '75 minutes';
         })
     }
 
