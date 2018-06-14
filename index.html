@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>SRCCON 2017 Schedule</title>
-        <meta name="description" content="Session schedule for SRCCON 2017, August 3 & 4 in Minneapolis.">
+        <title>SRCCON 2018 Schedule</title>
+        <meta name="description" content="Session schedule for SRCCON 2018, June 28 & 29 in Minneapolis.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://use.typekit.net/xnh2etj.js"></script>
+        <script src="https://use.typekit.net/mvg8obr.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
         <link rel="stylesheet" href="css/schedule.css">
         <link rel="shortcut icon" href="img/favicon.ico" />
@@ -24,19 +24,24 @@
     </head>
     <body>
         <header>
-            <nav>
+            <nav id="header-nav">
                 <div class="container">
-                    <a href="https://srccon.org" id="logo"><img src="img/corner_logo.png"></a>
-                    <ul id="page-links">
-                        <li id="home"><a href="/">schedule</a></li>
-                        <li id="participants"><a href="https://srccon.org/guide/participant/">participant guide</a></li>
+                    <a href="https://srccon.org" id="corner-logo"><img src="img/srccon_logo_angle_512.png"></a>
+                    <ul class="site-nav-links">
+                        <li><a href="https://srccon.org/program">Program</a></li>
+                        <li><a href="https://srccon.org/participation">Participation</a></li>
+                        <li><a href="https://srccon.org/logistics">Logistics</a></li>
                     </ul>
                 </div>
-            </nav>
+            </nav>        
+            <div id="header-callout">
+                <div class="page-container">
+                    <span>SRCCON&nbsp;2018 &bull; June&nbsp;28&nbsp;&&nbsp;29 in&nbsp;Minneapolis</span>
+                </div>
+            </div>
         </header>
         
-        <div class="container">
-            <p class="meta">August 3 & 4 • <a href="https://goo.gl/maps/EdcTVNzP82q">McNamara Alumni Center</a>, Minneapolis,&nbsp;MN</p>
+        <div id="controls" class="container">
             <div id="schedule-controls"></div>
             <article id="schedule"></article>
         </div>
@@ -56,22 +61,22 @@
             <h3><span>Thursday 1 PM</span></h3>
             <div id="thursday-lunch" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 3 PM</span></h3>
+            <h3><span>Thursday 2:30 PM</span></h3>
             <div id="thursday-pm-1" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 4:45 PM</span></h3>
+            <h3><span>Thursday 4:15 PM</span></h3>
             <div id="thursday-pm-2" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 6 PM</span></h3>
+            <h3><span>Thursday 5:30 PM</span></h3>
             <div id="thursday-evening" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 7 PM</span></h3>
+            <h3><span>Thursday 6:30 PM</span></h3>
             <div id="thursday-evening-1" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 8 PM</span></h3>
+            <h3><span>Thursday 7:30 PM</span></h3>
             <div id="thursday-evening-2" class="page-block"><div class="open-block">OPEN</div></div>
 
-            <h3><span>Thursday 9 PM</span></h3>
+            <h3><span>Thursday 8:30 PM</span></h3>
             <div id="thursday-evening-3" class="page-block"><div class="open-block">OPEN</div></div>
         </div>
         
@@ -140,8 +145,8 @@
                             <% if (session.room) { %><span class="session-room"><strong>Room:</strong> <%= smartypants(session.room) %></span><% } %>
                         </p>
                         <% } %>
-                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i> <strong><a href="https://srccon.org/transcripts/SRCCON2017-<%= session.id %>">Live transcript of this session</a></strong></p><% } %>
-                        <% if (session.notepad) { %><p><i class="fa fa-file-text-o"></i> <strong><a href="https://etherpad.opennews.org/p/SRCCON2017-<%= session.id %>">Session notes & resources</a></strong></p><% } %>
+                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i> <strong><a href="https://srccon.org/transcripts/SRCCON2018-<%= session.id %>">Live transcript of this session</a></strong></p><% } %>
+                        <% if (session.notepad) { %><p><i class="fa fa-file-text-o"></i> <strong><a href="https://etherpad.opennews.org/p/SRCCON2018-<%= session.id %>">Session notes & resources</a></strong></p><% } %>
                         <% if (session.description) { %><%= marked(session.description) %><% } %>
 
                         <% if (session.twitter) { %>
@@ -179,10 +184,10 @@
         <script>
             var config = {
                 pathToSessionsJson: 'sessions.json',
-                localStoragePrefix: 'srccon-2017',
+                localStoragePrefix: 'srccon-2018',
                 tabList: [
-                    { name: 'Thursday', displayName: 'Thu', tabDate: new Date(2017,7,3) },
-                    { name: 'Friday', displayName: 'Fri', tabDate: new Date(2017,7,4) },
+                    { name: 'Thursday', displayName: 'Thu', tabDate: new Date(2018,5,28) },
+                    { name: 'Friday', displayName: 'Fri', tabDate: new Date(2018,5,29) },
                     { name: 'All', displayName: '<i class="fa fa-search"></i>' }
                 ]
             }
