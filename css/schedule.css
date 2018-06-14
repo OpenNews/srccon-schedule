@@ -84,8 +84,11 @@ body {
     color: #111;
     font-size: 1.8rem;
     background-color: #fff;
-    font-family: "ff-tisa-sans-web-pro", "Open Sans", sans-serif;
+    font-family: "ff-tisa-web-pro", "Open Sans", sans-serif;
     margin: 0;
+}
+h2, h4 {
+    font-family: "ff-tisa-sans-web-pro", "Open Sans", sans-serif;
 }
 .container {
     position: relative;
@@ -99,11 +102,9 @@ a {
     color: #184774;
 }
 
-header {
-    font-family: sofia-pro, sans-serif;
-}
 header, footer {
     line-height: 1.4em;
+    font-family: "sofia-pro", "Open Sans", sans-serif;
 }
 header .container {
     margin: 0 auto;
@@ -509,7 +510,7 @@ h3.slider-control {
 
 #show-full-schedule {
     display: block;
-    font-size: 1.8rem;
+    font-size: 1.8rem;*/
     margin-bottom: 2rem;
 }
 
