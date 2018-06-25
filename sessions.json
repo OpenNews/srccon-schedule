@@ -183,8 +183,8 @@
         "day": "Thursday", 
         "description": "What can we do to empower diverse journalists, including younger journalists, people of color, and women and non-binary individuals, in newsrooms that often lack mentorship and support? To answer this question, first we must address your identity—which parts of your identity do you bring with you to work? Which parts do you leave at the door? How does that affect your newsroom experience and how the news is covered in America’s increasingly divisive political and social climate? We’ll begin the session with an exercise that explores our own identities. Different identities impact the work you do and how you interact with others. Then, after hearing from different people in the group, we’ll develop strategies for listening, mentorship, and self-care, using examples from our own experiences at The Seattle Times and The New York Times to explore strategies that we’ve seen work, and how to improve.", 
         "everyone": "", 
-        "facilitators": "Audrey Carlsen, Helga Salinas", 
-        "facilitators_twitter": "audcarls, helga_salinas", 
+        "facilitators": "Audrey Carlsen", 
+        "facilitators_twitter": "audcarls", 
         "id": "young-journalists-of-color", 
         "length": "75 minutes", 
         "notepad": "y", 
@@ -222,6 +222,21 @@
         "time": "1pm", 
         "timeblock": "thursday-lunch", 
         "title": "Lunch at SRCCON", 
+        "transcription": ""
+    }, 
+    {
+        "day": "Thursday", 
+        "description": "Session rooms are available for informal get-togethers over lunch, so pick up some food and join fellow attendees to talk hobbies, work, or even just hang out and watch the World Cup. If you have an idea for a lunch session, we'll have a signup board available in our common space throughout SRCCON.", 
+        "everyone": "y", 
+        "facilitators": "", 
+        "facilitators_twitter": "", 
+        "id": "thursday-lunch-conversations", 
+        "length": "", 
+        "notepad": "", 
+        "room": "", 
+        "time": "1pm", 
+        "timeblock": "thursday-lunch", 
+        "title": "Lunch conversations - sign up at SRCCON", 
         "transcription": ""
     }, 
     {
@@ -706,6 +721,21 @@
     }, 
     {
         "day": "Friday", 
+        "description": "Session rooms are available for informal get-togethers over lunch, so pick up some food and join fellow attendees to talk hobbies, work, or even just hang out and watch the World Cup. If you have an idea for a lunch session, we'll have a signup board available in our common space throughout SRCCON.", 
+        "everyone": "y", 
+        "facilitators": "", 
+        "facilitators_twitter": "", 
+        "id": "friday-lunch-conversations", 
+        "length": "", 
+        "notepad": "", 
+        "room": "", 
+        "time": "1pm", 
+        "timeblock": "friday-lunch", 
+        "title": "Lunch conversations - sign up at SRCCON", 
+        "transcription": ""
+    }, 
+    {
+        "day": "Friday", 
         "description": "As digital journalists, we often push the platform forward, with cool new interactives and high-impact layouts. Unfortunately, accessibility is often ignored in the process. It's easy to make excuses: we're on deadline, or visual content wouldn't work in a screen reader anyway. But what if it's far easier than you think? In this session, we'll set up accessibility tools, share lessons we've learned about creating inclusive pages, and assemble a list of easy wins that you can take back to your newsrooms and digital teams.", 
         "everyone": "", 
         "facilitators": "Thomas Wilburn, Joanna Kao", 
@@ -766,7 +796,7 @@
     }, 
     {
         "day": "Friday", 
-        "description": "Do I use \"display\" or \"position\" for that? Sometimes you just want to make sure your newsroom tool does it's job and not have to worry about what it looks like. Well, your days of worrying about front-end design could soon be over. Slack's suite of API's are vast and the documentation is one of the best of any API out there. In this session, I'll quickly demo most of the different methods of interaction available with Slack's APIs. We'll build a simple graphics request form together as a group. When that's finished, we'll brainstorm ideas for other newsroom tools and discuss how our front-end needs could be met by one or more of the methods we've seen so far. We'll be using Flask to do it, so basic Flask and Python knowledge will be required.\n\nSlack has a number of features you might need from a front-end design already included. Unprompted function calls? Slack has slash commands. Do they support arguments? You bet they do. Filling out forms? Slack's got that too. Giving personal user feedback when a script runs? Ephemeral messages make sure that only a single user can see the notification without ever having to leave the channel. Learn about all these and more in the session.", 
+        "description": "Do I use \"display\" or \"position\" for that? Sometimes you just want to make sure your newsroom tool does it's job and not have to worry about what it looks like. Well, your days of worrying about front-end design could soon be over. Slack's suite of API's are vast and the documentation is one of the best of any API out there. In this session, I'll quickly demo most of the different methods of interaction available with Slack's APIs. We'll build a simple graphics request form together as a group. When that's finished, we'll brainstorm ideas for other newsroom tools and discuss how our front-end needs could be met by one or more of the methods we've seen so far. We'll be using Flask to do it, so basic Flask and Python knowledge will be required.\n\nSlack has a number of features you might need from a front-end design already included. Unprompted function calls? Slack has slash commands. Do they support arguments? You bet they do. Filling out forms? Slack's got that too. Giving personal user feedback when a script runs? Ephemeral messages make sure that only a single user can see the notification without ever having to leave the channel. Learn about all these and more in the session.\n\nWe'll use [this sandbox Slack workspace](https://join.slack.com/t/srccon2018frontend/shared_invite/enQtMzg3ODM3NjIyMTAxLWVkZWI4NGFkYzRlNmZiMGU0N2U4NjBmMmY0Zjg1NjRmNGFiNDdkY2E2NDczMjA3ODA4YTk4ZTNiYzI1MDk4YmU) during the session, so feel free to go ahead and join!", 
         "everyone": "", 
         "facilitators": "Andrew Briz", 
         "facilitators_twitter": "brizandrew", 
