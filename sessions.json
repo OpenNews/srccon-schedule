@@ -271,7 +271,7 @@
     }, 
     {
         "day": "Thursday", 
-        "description": "The dream of the 90s is alive with static sites! The JAM stack (JavaScript, APIs, and Markup) is a new twist on an old idea. Making static webpages has many benefits for newsrooms in terms of cost and long term maintainability. In this session, we will go through the basics of the static site generation landscape and participants will deploy their own custom static site, like GeoCities never died but with a data driven twist.", 
+        "description": "The dream of the 90s is alive with static sites! The JAM stack (JavaScript, APIs, and Markup) is a new twist on an old idea. Making static webpages has many benefits for newsrooms in terms of cost and long term maintainability. In this session, we will go through the basics of the static site generation landscape and participants will deploy their own custom static site, like GeoCities never died but with a data-driven twist.", 
         "everyone": "", 
         "facilitators": "Carl Johnson", 
         "facilitators_twitter": "carlmjohnson", 
