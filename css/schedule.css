@@ -465,7 +465,8 @@ h3.slider-control {
     min-height: 0;
 }
 
-.session-length-long {
+.session-length-long,
+.session-length-alt {
     background-color: PowderBlue;
 }
 

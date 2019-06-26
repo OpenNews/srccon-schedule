@@ -61,6 +61,9 @@
             <h3><span>Thursday 12:30 PM</span></h3>
             <div id="thursday-lunch" class="page-block"><div class="open-block">OPEN</div></div>
 
+            <h3><span>Thursday 1:45 PM</span></h3>
+            <div id="thursday-science-fair" class="page-block"><div class="open-block">OPEN</div></div>
+
             <h3><span>Thursday 3 PM</span></h3>
             <div id="thursday-pm-1" class="page-block"><div class="open-block">OPEN</div></div>
 
@@ -145,8 +148,8 @@
                             <% if (session.room) { %><span class="session-room"><strong>Room:</strong> <%= smartypants(session.room) %></span><% } %>
                         </p>
                         <% } %>
-                        <% if (session.transcription) { %><p><i class="fa fa-cc"></i> <strong><a href="https://srccon.org/transcripts/SRCCON2018-<%= session.id %>">Live transcript of this session</a></strong></p><% } %>
-                        <% if (session.notepad) { %><p><i class="fa fa-file-text-o"></i> <strong><a href="https://etherpad.opennews.org/p/SRCCON2018-<%= session.id %>">Session notes & resources</a></strong></p><% } %>
+                        <% if (session.transcription && session.transcriptsready) { %><p><i class="fa fa-cc"></i> <strong><a href="https://srccon.org/transcripts/SRCCON2019-<%= session.id %>">Live transcript of this session</a></strong></p><% } %>
+                        <% if (session.notepad) { %><p><i class="fa fa-file-text-o"></i> <strong><a href="https://etherpad.opennews.org/p/SRCCON2019-<%= session.id %>">Session notes & resources</a></strong></p><% } %>
                         <% if (session.description) { %><%= marked(session.description) %><% } %>
 
                         <% if (session.twitter) { %>

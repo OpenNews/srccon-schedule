@@ -160,7 +160,7 @@ function Schedule(CONFIG) {
         var templatedata = {
             session: sessionItem,
             sessionID: sessionItem.id,
-            sessionClass: sessionItem.everyone ? 'everyone' : sessionItem.length == '75 minutes' ? 'length-short' : 'length-long',
+            sessionClass: sessionItem.everyone ? 'everyone' : sessionItem.length == '75 minutes' ? 'length-short' : 'length-alt',
             showDay: false,
             showFacilitators: false,
             smartypants: schedule.smartypants
